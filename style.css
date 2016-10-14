@@ -33,6 +33,14 @@
     background: none repeat scroll 0% 0% rgba(230, 0, 0, 0.9);
     border-radius: 0px;
   }
+
+ /*зафиксированная пользовательская панель*/
+  #elUserNav {
+    background-color: rgb(0, 132, 168);
+    position: fixed;
+    z-index: 9999;
+  top: 0px;
+}
   
   /*широкое поле доп. сообщения от админа под сообщением*/  
   .post-note {
@@ -72,6 +80,12 @@
     border-style: dashed;
     border-color: #C5794D/*417BA3*/;
 }
+
+/*крестик поверх картинки в окне просмотра изображения*/
+  .ipsLightbox_close
+  {  
+    z-index: 1000 !important;
+}  
 
 /*квадратные аватарки*/
   .ipsUserPhoto > img,
@@ -261,7 +275,7 @@
 /*Тёмная тема для FireFox*/
 .ipsAreaBackground_reset,
 	.ipsBox:not(.ipsBox_transparent):not(.ipsModerated){
-		background: none repeat scroll 0% 0% #1B1B1B /*!important*/;
+		background: none repeat scroll 0% 0% #1B1B1B;
 	}
 
 /*Тёмная тема*/
@@ -312,6 +326,14 @@ color: #CCC;
     position: relative;
 }
 
+  /*рамки вокруг блоков*/
+.ipsBox {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #323232;
+    border-radius: 3px;
+}
+
 
 /*принудительная установка цвета текста для подписей*/
 div.cPost_contentWrap.ipsPad > div.ipsResponsive_hidePhone > div.ipsType_light.ipsType_richText > p,
@@ -325,6 +347,11 @@ div.cPost_contentWrap.ipsPad > div.ipsResponsive_hidePhone > div.ipsType_light.i
 div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained > p > span > span{
     color: #AAA !important;    
 }
+
+/*исправляет установленный черынй текст*/
+  .cPost_contentWrap > div:nth-child(1) > div:nth-child(n){
+    color: #AAA !important;        
+  }
 
  /*фон уведомлений*/
   .ipsDataList_readStatus .ipsDataItem:not(.ipsDataItem_unread):not(.ipsDataItem_selected):not(.ipsModerated) {
@@ -483,6 +510,16 @@ ipsWidget.ipsWidget_vertical .ipsWidget_title {
 	color: #999;
 }
 
+ /*информационная полоса в опросе, о том что голосование НЕ анонимное*/
+  .ipsMessage_info, .ipsMessage_information {
+    background: none repeat scroll 0% 0% #404040;
+}
+  
+  /*стрелка > в статусе профиля. username1 > username2 +comment */
+  .ipsStreamItem_title {
+    color: #eee;
+  }
+
 /* Menu stuff that needs changing */
 .ipsSideMenu_itemActive a,
 a.ipsSideMenu_itemActive,
@@ -528,10 +565,28 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 .ipsApp select:not( [multiple] ) {
 	color: #333;
 }
+
+  /*удалён белый фон под счётчиком лайков сообщения*/
+  html[dir="ltr"] .ipsLikeRep [data-action="giveReputation"] + .ipsReputation_count {
+    background-color: #222;
+}
+  
+  /*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
+  .ipsApp .ipsButton_light {
+      background: none repeat scroll 0% 0% #AAA;
+  }
+  
+  /*кнопка профиль*/
+  .ipsApp .ipsButton_veryLight {
+    background: none repeat scroll 0% 0% #C0C0C0;
+  }
 	
-	/*предупреждение при удалении беседы*/
+	/*окно предупреждения*/
 .ipsAlert {
     background: none repeat scroll 0% 0% #480000;
+}
+.ipsAlert_msg, .ipsAlert_icon {
+    color: #ddd !important;
 }
 	
 	/*окно написания сообщения*/
@@ -552,9 +607,11 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 	.cke_inner {
     background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.2);
 	}
-	
 
-
+  /*выделение активной кнопки форматирования*/
+  a.cke_button_on {
+      background: none repeat scroll 0% 0% #808080;
+  }
 	
 	
 .ipsFieldRow_required {
@@ -786,6 +843,31 @@ iframe[data-embedContent],
 }
 
 /* Pagination */
+
+/*нумерация страниц в ЛС*/
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_page a,
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_next a,
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_prev a,
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_first a,
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_last a{
+    background: none repeat scroll 0% 0% #666 !important;
+    color: #DDD !important;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);/*тень под номером страницы!?*/
+  }
+  /*активная страница*/
+  .ipsPagination .ipsPagination_page.ipsPagination_active a {
+    background: none repeat scroll 0% 0% #323232 !important;
+  }
+  
+  /*эффект от наведения*/
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_page a:hover,
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_next a:hover,
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_prev a:hover,
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_first a:hover,
+  .ipsPagination:not(.ipsPagination_mini) .ipsPagination_last a:hover{
+    background: none repeat scroll 0% 0% #888 !important;
+  }
+
 .ipsPager_type,
 .ipsPager .ipsPager_next a:after,
 .ipsPager .ipsPager_prev a:after {
