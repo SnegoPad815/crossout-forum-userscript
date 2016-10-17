@@ -39,7 +39,12 @@
     background-color: rgb(0, 132, 168);
     position: fixed;
     z-index: 9999;
-  top: 0px;
+    top: -7px;
+}
+ /*счётчик писем и уведомлений*/
+  html[dir="ltr"] .ipsApp .ipsNotificationCount {
+    right: -12px;
+    top: 10px;
 }
   
   /*широкое поле доп. сообщения от админа под сообщением*/  
@@ -74,7 +79,9 @@
     font-size: 16px;
   }
   /*разделитель непрочитанных сообщения*/
-  .ipsCommentUnreadSeperator {
+  .ipsCommentUnreadSeperator,
+  /*новые сообщения в активности*/		
+  html[dir="ltr"] .ipsStreamItem_bar hr.ipsHr {
     margin: 6px 0px;
     border-width: 4px 0px 0px;
     border-style: dashed;
@@ -86,6 +93,16 @@
   {  
     z-index: 1000 !important;
 }  
+
+/*администрация. равная высота карточки*/
+#ipsLayout_mainArea > section > div > div:nth-child(n) > div:nth-child(n){
+    min-height: 155px;
+}
+
+/*аватарки в карточках при поиске пользователей*/
+.cStream_members .ipsUserPhoto {
+    margin-top: -5px;
+}
 
 /*квадратные аватарки*/
   .ipsUserPhoto > img,
@@ -108,6 +125,11 @@
   /*кнопки поделиться/разгласить*/
   .cShareLink
   {border-radius: 2px !important;}
+
+  /*удаление фона под картинками с альфа каналом.*/
+.ipsUserPhoto {
+  background: none repeat scroll 0% 0% rgba(0,0,0,0) !important;
+}
 
 /*ширина картинки ограничена 200px*/
   .ipsImage
@@ -352,6 +374,11 @@ div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained 
   .cPost_contentWrap > div:nth-child(1) > div:nth-child(n){
     color: #AAA !important;        
   }
+  /*черный текст под спойлером и с вообщении "замочная скважина"*/
+  .ipsSpoiler_contents > p > b > span,
+  .ipsPad .cPost_contentWrap >div:nth-child(1) > p > b > span {
+    color: #AAA !important;;
+  }
 
  /*фон уведомлений*/
   .ipsDataList_readStatus .ipsDataItem:not(.ipsDataItem_unread):not(.ipsDataItem_selected):not(.ipsModerated) {
@@ -461,6 +488,11 @@ ipsWidget.ipsWidget_vertical .ipsWidget_title {
 	color: #999;
 }
 
+/*текст на вкладках рейтинга лучших авторов*/
+.ipsTabs_small .ipsTabs_item:not( .ipsTabs_activeItem ) {
+    color: #999 !important;
+}
+
 
 /* Reset nav areas for correct coloring */
 
@@ -513,6 +545,22 @@ ipsWidget.ipsWidget_vertical .ipsWidget_title {
  /*информационная полоса в опросе, о том что голосование НЕ анонимное*/
   .ipsMessage_info, .ipsMessage_information {
     background: none repeat scroll 0% 0% #404040;
+}
+
+/*голосование*/
+/*фоновая шкала*/
+.cPollVoteBar {
+    background: #282828;
+}
+
+/*текст на ней*/
+.cPollVoteBar > span:after {
+    color: #CCC;
+}
+
+/*цифры на заполненной шкале*/
+.cPollVoteBar > span.cPollVoteBar_inside:after {
+    color: #eee;
 }
   
   /*стрелка > в статусе профиля. username1 > username2 +comment */
@@ -844,7 +892,7 @@ iframe[data-embedContent],
 
 /* Pagination */
 
-/*нумерация страниц в ЛС*/
+/*нумерация страниц*/
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_page a,
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_next a,
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_prev a,
@@ -852,7 +900,7 @@ iframe[data-embedContent],
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_last a{
     background: none repeat scroll 0% 0% #666 !important;
     color: #DDD !important;
-    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);/*тень под номером страницы!?*/
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7) !important;/*тень под номером страницы!?*/
   }
   /*активная страница*/
   .ipsPagination .ipsPagination_page.ipsPagination_active a {
