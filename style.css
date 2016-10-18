@@ -63,10 +63,12 @@
     border: 0px !important;
     box-shadow: 0 0 10px #03c10b;
 }  
-  .ipsComment_highlighted.ipsBox:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected),
-  .ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected) .ipsAreaBackground_reset {
-    background-color: #152D14;
-  }
+.ipsComment_highlighted.ipsBox:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected),
+.ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected),
+.ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected) > div:nth-child(1) > div:nth-child(2),
+.ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected) .ipsAreaBackground_reset {
+	background-color: #152D14;
+}
 
 /*Оранжевый фон сообщения адаптирован для тёмной темы*/
 .gaijin-important-post + article {   
@@ -400,6 +402,20 @@ div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained 
     color: #fff;
 }
 
+/*кнопки отображения активности*/
+  /*текст рядом с кнопками*/
+  .ipsButtonRow li > span  {
+    color: #eee;
+  }
+  /*активная - тёмная*/
+  .ipsButtonRow li > a.ipsButtonRow_active, .ipsButtonRow li > button.ipsButtonRow_active {
+    background: none repeat scroll 0% 0% #555;
+  }
+  /*не активная - светлая*/
+  .ipsAreaBackground_light .ipsButtonRow li > a:not(.ipsButtonRow_active) {
+    background: none repeat scroll 0% 0% #969696 !important;
+}
+
 	
 	/*выпадающий список разделов в поиске*/
 	.ipsSelectTree	{
@@ -468,10 +484,28 @@ div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained 
 	color: #ddd;
 }
 	
-ipsWidget.ipsWidget_vertical .ipsWidget_title {
-    color: #FFF;
-    background: none repeat scroll 0% 0% rgba(207, 104, 44, 0.7);
+/*фон шапок правой колонки на главной странице*/  
+.ipsWidget.ipsWidget_vertical .ipsWidget_title {
+    color: #eee;
+    background: none repeat scroll 0% 0% #41270d;
 }
+
+  /*градиент в шапках категорий*/
+  h2.ipsType_sectionTitle {
+      background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent;
+  }
+  /*полоса под номерами страниц*/
+  .ipsButtonBar {
+      background: none repeat scroll 0% 0% #3C1500;
+  }
+  /*большая иконка непрочитанного сообщения*/
+  .ipsItemStatus.ipsItemStatus_large {
+    background: none repeat scroll 0% 0% #7D441E;
+  }
+  /*малая иконка непрочитанного сообщения*/
+  .ipsItemStatus:not( .ipsItemStatus_large ){
+    color: #7d441e;
+  }
 	
 .ipsWidget.ipsWidget_vertical .ipsWidget_inner,
 #elSiteTitle,
@@ -659,6 +693,30 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   /*выделение активной кнопки форматирования*/
   a.cke_button_on {
       background: none repeat scroll 0% 0% #808080;
+  }
+
+/*фон выпадающего списка шрифт/размер*/
+  .cke_panel_list {
+    background-color: #2D2D2D !important;
+  }
+  /*рамка вокруг выпадающего списка вместо margin*/
+  .cke_panel_list {
+    margin: 0px;
+    border: 3px solid #2D2D2D;
+  }
+  /*рамка вокруг названия шрифта в выпадающем списке*/
+  .cke_panel_listItem a {
+    border: none;
+  }
+  /*эффект наведения на пункт списка*/
+  .cke_panel_listItem a:hover,.cke_panel_listItem a:focus,.cke_panel_listItem a:active{
+	border-color:#dedede;
+	background-color:#666;
+	box-shadow:0 0 2px rgba(0,0,0,.1) inset
+  }
+  /*эффект выделения выбраного пункта*/
+  .cke_panel_listItem.cke_selected a {
+    background-color: #666;
   }
 	
 	
@@ -852,8 +910,9 @@ html[dir="rtl"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBloc
 	color: #000;
 }
 
+  /*активность за "последний час/сегодня/"*/
 .ipsStreamItem_time {
-	color: #222;
+	color: #eee;
 }
 
 html[dir] .ipsStreamItem.ipsStreamItem_condensed .ipsStreamItem_stats {
@@ -980,8 +1039,9 @@ hr.ipsHr {
 	color: rgba(255,255,255,0.18);
 }
 
+/*оверлей предпросмотра темы!?*/
 .ipsScrollbar {
-	background: rgba(255,255,255,0.4);
+	background: #1b1b1b;
 }
 
 .ipsAlert_msg,
