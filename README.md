@@ -1,10 +1,14 @@
 # userscript & restyle for crossout forum
 
-Скрипт позволяет установить картинку на фон профиля не набирая 3000 сообщений.
+
+
+https://greasyfork.org/ru/scripts/24127
+
+Скрипт позволяет установить картинку на фон профиля не набирая 3000 сообщений. Этот фон будет виден всем кто использует скрипт. 
 
 
 
-https://userstyles.org/styles/132956/crossout-forum-changes-dark-theme
+https://userstyles.org/styles/132956
 
 Данный рестайл привносит несколько косметических правок в дизайн форума CROSSOUT:
 *тёмная тема
