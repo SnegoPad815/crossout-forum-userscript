@@ -1,7 +1,7 @@
 var covers = [
 {
 	"id": 30576,
-	"top": 300,
-	"url": "https://www.dropbox.com/s/qv97dqeykanq81x/nastol.com.ua-124516.jpg?dl=1"
+	"top": 180,
+	"url": "http://img03.deviantart.net/e43b/i/2015/120/e/4/nuclear_winter__apocalypse_by_ladyelenanaylor-d38q2ak.jpg"
 }
 ]
