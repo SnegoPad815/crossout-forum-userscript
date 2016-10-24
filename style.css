@@ -37,11 +37,13 @@
  /*зафиксированная пользовательская панель*/
   #elUserNav {
     background-color: rgb(0, 132, 168);
+    border-radius: 0px 0px 20px 20px;
+    padding: 0px 14px;
     position: fixed;
-    z-index: 9999;
-    top: -7px;
+    z-index: 2001;
+    top: -3px;
 }
- /*счётчик писем и уведомлений*/
+ /*счётчик писем и уведомлений опущены вниз*/
   html[dir="ltr"] .ipsApp .ipsNotificationCount {
     right: -12px;
     top: 10px;
@@ -133,7 +135,7 @@
   background: none repeat scroll 0% 0% rgba(0,0,0,0) !important;
 }
 
-/*ширина картинки ограничена 200px*/
+/*высота картинки ограничена 200px*/
   .ipsImage
   .ipsImage_thumbnailed,
   .ipsType_richText img {
@@ -224,7 +226,7 @@
   }
   /*...а теперь его же, но уже вместе со счётчиком из "важных сообщений" двигаем вправо!*/
   .ipsWidget.ipsWidget_vertical .ipsWidget_inner  {
-    padding-right: 0px !important;
+    padding-right: 1px !important;
   }
   
 /*необходимые восстановления из-за наследия от предыдущих правок...*/
@@ -483,6 +485,16 @@ div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained 
 .ipsType_pageTitle {
 	color: #ddd;
 }
+
+/*заголовок в теме "х сообщений в этой теме"*/
+  .ipsType_sectionTitle{
+    color: #eee;
+  }
+  
+  /*название категорий в шапках*/
+  a.ipsType_sectionTitle, .ipsType_sectionTitle a {
+    color: #eee;
+  }
 	
 /*фон шапок правой колонки на главной странице*/  
 .ipsWidget.ipsWidget_vertical .ipsWidget_title {
@@ -491,8 +503,10 @@ div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained 
 }
 
   /*градиент в шапках категорий*/
-  h2.ipsType_sectionTitle {
-      background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent;
+  h2.ipsType_sectionTitle,
+  /*счётчик результатов поиска*/
+  .ipsType_sectionTitle{
+    background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent;
   }
   /*полоса под номерами страниц*/
   .ipsButtonBar {
@@ -648,9 +662,28 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 	color: #333;
 }
 
-  /*удалён белый фон под счётчиком лайков сообщения*/
-  html[dir="ltr"] .ipsLikeRep [data-action="giveReputation"] + .ipsReputation_count {
-    background-color: #222;
+/*фон лайков если их 0*/
+  .ipsPos_right > .ipsReputation_count{    
+    background: none repeat scroll 0% 0% #222;
+  }
+  /*фон лайков если их больше 0*/
+  .ipsPos_right > .ipsReputation_count.ipsType_positive {
+    background: none repeat scroll 0% 0% #8DC958;
+  }
+
+/*счётчики сообщений*/
+  .ipsCommentCount,.ipsFollow .ipsCommentCount {
+    background: none repeat scroll 0% 0% #6C6C6C;
+    color: #eee;
+  }
+  /*"стрелочка" влево от счётчика*/
+  html[dir="ltr"] .ipsCommentCount:after,html[dir="ltr"] .ipsFollow .ipsCommentCount:after {
+    border-color: transparent #6C6C6C transparent transparent;;
+}
+
+  /*фон лимита диалогов в почте*/
+.ipsAttachment_progress{
+    background: none repeat scroll 0% 0% #AAA;
 }
   
   /*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
