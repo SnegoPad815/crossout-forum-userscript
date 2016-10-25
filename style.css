@@ -48,6 +48,11 @@
     right: -12px;
     top: 10px;
 }
+
+  /*ярлык популярного сообщения*/
+.ipsComment.ipsComment_popular .ipsComment_popularFlag {
+    z-index: 2000;
+}
   
   /*широкое поле доп. сообщения от админа под сообщением*/  
   .post-note {
@@ -135,7 +140,7 @@
   background: none repeat scroll 0% 0% rgba(0,0,0,0) !important;
 }
 
-/*высота картинки ограничена 200px*/
+/*ширина картинки ограничена 200px*/
   .ipsImage
   .ipsImage_thumbnailed,
   .ipsType_richText img {
@@ -418,6 +423,15 @@ div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained 
     background: none repeat scroll 0% 0% #969696 !important;
 }
 
+  /*"стрелочка" влево от события в активности*/
+  html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem:after {
+    border-color: transparent #1B1B1B transparent transparent !important;
+}
+  /*контур "стрелочки"*/
+  html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:before {
+    border-color: transparent #181818 transparent transparent !important;
+  }
+
 	
 	/*выпадающий список разделов в поиске*/
 	.ipsSelectTree	{
@@ -629,11 +643,24 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 	background: rgba(255,255,255,0.03) !important;
 }
 
+/*боковое меню в настройках*/
 .ipsSideMenu_subTitle {
 	text-transform: uppercase;
 	color: #868686;
-	font-size: 11px;
+	font-size: 12px;
+  padding: 4px 5px;
+  background-color: #292929;
 }
+  
+  .ipsSideMenu_item a, a.ipsSideMenu_item {
+    padding: 5px 10px;
+    margin-bottom: 0px;
+  }
+  .ipsSideMenu_list {
+    margin: 0px 0px 15px;
+    padding: 0px 0px 0px 5px;
+  }
+
 
 .ipsSideMenu_withChecks .ipsSideMenu_item:not( .ipsSideMenu_itemActive ) a:after,
 .ipsSideMenu_withChecks a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):after,
@@ -668,7 +695,16 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   }
   /*фон лайков если их больше 0*/
   .ipsPos_right > .ipsReputation_count.ipsType_positive {
-    background: none repeat scroll 0% 0% #8DC958;
+    background:none repeat scroll 0% 0% rgb(95, 122, 71) /* #8DC958;*/
+  }
+  /*цвет счётчика лайков*/
+  .ipsPos_right > .ipsType_positive {
+    color: #EEE; /*#D43B2D;*/
+}
+
+  /*фон 0-й репутации в профиле*/
+  .cProfileRepScore_neutral {
+    background: none repeat scroll 0% 0% #555;
   }
 
 /*счётчики сообщений*/
@@ -821,6 +857,15 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 		.ipsHovercard_stemBottom .ipsHovercard_stem:before {
 			border-color: transparent transparent #000 transparent
 		}
+
+  /*маленькое окошко загрузки карточки*/
+.ipsHovercard_loading{
+	background-color:#222;
+}
+  /*"стрелочка" от загружающейся карточки*/
+  .ipsHovercard_loading:after{
+	border-color:#222 transparent transparent transparent;
+}
 
 .ipsMenu {
 	background: #222;
@@ -983,6 +1028,9 @@ iframe[data-embedContent],
 }
 
 /* Pagination */
+  .ipsPagination.ipsPagination_mini a{
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7) !important;/*тень под номером страницы!?*/
+  }
 
 /*нумерация страниц*/
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_page a,
@@ -1040,9 +1088,14 @@ hr.ipsHr {
 	border-color: rgba(255,255,255,0.1);;
 }
 
-.ipsTooltip {
-	background: #000;
-}
+/*маленькая всплывающая подсказка*/
+  .ipsTooltip {
+    background: #000;
+  }
+  /*"стлелочка" вниз от подсказки*/
+  .ipsTooltip.ipsTooltip_top:after {
+    border-color: #000 transparent transparent;
+  }
 
 .ipsTabs_panels.ipsTabs_contained {
 	border-color: #444;
@@ -1104,14 +1157,26 @@ hr.ipsHr {
 	background: #000;
 }
 
+  /*строки-заголовки в таблице настроек уведомлений*/
 .ipsApp_front .ipsTable.ipsMatrix .ipsMatrix_subHeader {
-	background: #222;
-	color: #fff;
+	background: #2d2d2d;
+	color: #eee;
 }
 
+  /*фон шапки настроек уведомлений*/
 .ipsTable.ipsMatrix thead th {
-	background: #395e7e;
+    background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent;
 }
+
+  /*подсвеченная строка в настройках уведомлений, после перехода по ссылке*/
+  .ipsTable.ipsMatrix .ipsMatrix_highlighted {
+    background: none repeat scroll 0% 0% rgba(102, 51, 0, 0.5);
+}
+  /*выделенная строка в управлении подписками*/
+  .ipsApp .ipsDataItem_selected {
+    background-color: #353535;
+}
+  
 
 .ipsWidget {
 	background: #333;
@@ -1156,6 +1221,24 @@ hr.ipsHr {
 #elEventHeader_details {
 	background: #333;
 }
+  /*фиксированная шапка каленадря*/
+  .ipsSticky.ipsSticky_top {
+    border-bottom: 1px solid rgb(153, 153, 153);
+    background-color: #000;
+}
+  /*месяц и год в фиксированной шапке опущен*/
+  .cCalendarNav .ipsType_pageTitle {
+    margin: 0px 0px 7px;
+}
+  /*шапка с днями недели*/
+  .ipsAreaBackground_dark {
+    background: none repeat scroll 0% 0% #630;
+    color: #DDD;
+}
+  /*сетка календаря*/
+  .cCalendar td {
+    border: 1px solid #202020;
+  }
 
 /* Blog */
 #elBlogHeaderStats {
