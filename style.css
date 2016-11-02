@@ -34,14 +34,18 @@
     border-radius: 0px;
   }
 
+  /*Затемнение картинок*/
+  img {filter: brightness(0.8); transition: 0.25s;} /*до наведения*/
+  img:hover {filter: brightness(1);} /*после наведения*/
+
  /*зафиксированная пользовательская панель*/
   #elUserNav {
-    background-color: rgb(0, 132, 168);
+    background-color: rgb(0, 132, 168) !important;
     border-radius: 0px 0px 20px 20px;
-    padding: 0px 14px;
+    padding: 0px 14px !important;
     position: fixed;
     z-index: 2001;
-    top: -3px;
+    top: -3px !important;
 }
  /*счётчик писем и уведомлений опущены вниз*/
   html[dir="ltr"] .ipsApp .ipsNotificationCount {
@@ -78,7 +82,7 @@
 }
 
 /*Оранжевый фон сообщения адаптирован для тёмной темы*/
-.gaijin-important-post + article {   
+form > .gaijin-important-post + article {   
     background: none repeat scroll 0% 0% rgba(90, 44, 0, 0.6) !important;
     box-shadow: 0 0 10px #cf5200 !important;
   }
@@ -140,7 +144,7 @@
   background: none repeat scroll 0% 0% rgba(0,0,0,0) !important;
 }
 
-/*ширина картинки ограничена 200px*/
+/*высота картинки ограничена 200px*/
   .ipsImage
   .ipsImage_thumbnailed,
   .ipsType_richText img {
@@ -310,7 +314,27 @@
 	}
 
 /*Тёмная тема*/
-a, body{
+
+/*основной цвет текста*/
+body, a{
+color: #CCC;
+}
+
+  /*все текстовые/выпадающие поля ввода*/
+  input:not(#elSearchField), textarea, select,
+    /*поиск по автору/тэгам*/
+    .ipsField_autocomplete,
+    /*галочки*/
+    .ipsCustomInput > span {
+      background: #222 !important;
+      color: #DDD !important;
+    }
+  
+
+/*управление комментарием (изменить, цитировать), цвет ссылок, жалоба*/
+li a,
+.ipsAttachLink,
+.ipsResponsive_inline{
 color: #CCC;
 }
  
@@ -517,7 +541,8 @@ div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained 
 }
 
   /*градиент в шапках категорий*/
-  h2.ipsType_sectionTitle,
+  .cTopic > h2.ipsType_sectionTitle,
+  .ipsBox > h2.ipsType_sectionTitle,
   /*счётчик результатов поиска*/
   .ipsType_sectionTitle{
     background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent;
@@ -564,7 +589,7 @@ div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained 
 }
 
 	/*верхняя шапка с вкладками*/
-.ipsNavBar_primary{
+.ipsLayout_container > .ipsNavBar_primary{
 		background: rgba(50,50,50,.5);
 	}
 	
@@ -988,6 +1013,11 @@ html[dir="rtl"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBloc
 	color: #000;
 }
 
+/*кнопка настроек тем в типе публикаций в активности*/
+.cStreamForm_list li a.ipsSideMenu_item.ipsSideMenu_itemActive + .cStreamForm_menu, .cStreamForm_list li a.ipsSideMenu_item:hover:not(.ipsSideMenu_itemActive) + .cStreamForm_menu{
+    background: #222 !important;
+}
+
   /*активность за "последний час/сегодня/"*/
 .ipsStreamItem_time {
 	color: #eee;
@@ -1190,7 +1220,7 @@ hr.ipsHr {
 		border-bottom: 0;
 	}
 	.ipsPad_half.ipsWidget_inner {
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
 	.ipsWidget .ipsTabs_small .ipsTabs_item:not( .ipsTabs_activeItem ) {
