@@ -19,7 +19,7 @@
   {  
     font-size: 51px;
     line-height: 30px;
-    background: none repeat scroll 0% 0% rgba(255, 0, 0, 0.7);
+    background: none repeat scroll 0% 0% #B90606;
     border-radius: 5px;
 }  
   /*в диалоговом окне настроек и пр*/  
@@ -30,7 +30,7 @@
     font-size: 51px;
     color: #FFF;
     line-height: 41px;
-    background: none repeat scroll 0% 0% rgba(230, 0, 0, 0.9);
+    background: none repeat scroll 0% 0% #B90606;
     border-radius: 0px;
   }
 
@@ -83,7 +83,7 @@
 
 /*Оранжевый фон сообщения адаптирован для тёмной темы*/
 form > .gaijin-important-post + article {   
-    background: none repeat scroll 0% 0% rgba(90, 44, 0, 0.6) !important;
+    background: none repeat scroll 0% 0% #482C12 !important;
     box-shadow: 0 0 10px #cf5200 !important;
   }
   
@@ -392,7 +392,7 @@ color: #CCC;
 div.cPost_contentWrap.ipsPad > div.ipsResponsive_hidePhone > div.ipsType_light.ipsType_richText > p,
 /*принудительная установка цвета текста и фона подписи Psycho_14*/
 div.cPost_contentWrap.ipsPad > div.ipsResponsive_hidePhone > div.ipsType_light.ipsType_richText > p > span{
-    background-color: #1b1b1b !important;
+    background-color: transparent !important;
     color: #888 !important;
 }
 
@@ -802,19 +802,10 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     background: linear-gradient(to top,#444,#595959) repeat scroll 0% 0% #595959;
     text-align: left;
 }
-	
-  /*инвертированный цвет иконок*/
-  .cke_button_icon{
-    background-image: url("http://puu.sh/s6Bki/2c75049c1c.png") !important;
-  }
-  
-  /*разделитель между группами иконок*/
-  .cke_toolbar_separator {
-    background-color: #444;
-  }
   
 	.ipsComposeArea_dummy {
-    background: none repeat scroll 0% 0% #D7D7D7;
+    background: none repeat scroll 0% 0% #2D2D2D;
+    color: #AAA;
 	}
 .cke_wysiwyg_frame,
 .cke_wysiwyg_div{
@@ -823,13 +814,23 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 	.cke_wysiwyg_frame, .cke_wysiwyg_div {
     background-color: rgba(255, 255, 255, 0);
 }
-	.cke_top {
+  .cke_top {
     background-color: #222;
-}
-	.cke_inner {
-    background-color: rgba(0, 0, 0, 0.2);
-	}
+    border-bottom: 1px solid #444;
+  }
+  .cke_inner {
+    background-color:rgba(0, 0, 0, 0.2);
+  }
 
+  /*инвертированный цвет иконок*/
+  .cke_button_icon{
+    background-image: url("https://forum.crossout.ru/uploads/monthly_2016_11/icons.png.8075e6ec32828df44ef720e4c48a6b78.png") !important;
+    filter: brightness(0.9) !important;
+  }
+  /*разделитель между группами иконок*/
+  .cke_toolbar_separator {
+    background-color: #444;
+  }
   /*выделение активной кнопки форматирования*/
   a.cke_button_on {
       background: none repeat scroll 0% 0% #444;
@@ -862,6 +863,34 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   .cke_panel_listItem.cke_selected a {
     background-color: #666;
   }
+
+  /*панель выбора цвета/фона текста*/
+  .cke_panel{
+    background-color: #222;
+  }
+  /*рамка под цвет фона*/
+  a.cke_colorauto, a.cke_colormore,
+  a.cke_colorbox {
+    border: 1px solid #222;
+  }
+  /*цвет текста "автоматически"*/
+  .cke_colorblock, .cke_colorblock a {
+    color: #DDD;
+  }
+  /*наведение на...*/
+  /*..."автоматически"*/
+  a.cke_colorauto:hover, 
+  a.cke_colormore:hover, 
+  a.cke_colorauto:focus, 
+  a.cke_colormore:focus, 
+  a.cke_colorauto:active, 
+  a.cke_colormore:active,
+  /*...цвета*/
+  a.cke_colorbox:hover, 
+  a.cke_colorbox:focus, 
+  a.cke_colorbox:active {
+    background-color: #444;
+}
 	
 	
 .ipsFieldRow_required {
@@ -1112,13 +1141,18 @@ iframe[data-embedContent],
 	background: #111;
 }
 
-/*блок кода*/
+/*блок кода в сообщении*/
   .pln {
     color: #CCC;
   }  
   .ipsCode {
     background: none repeat scroll 0% 0% #222;
     border-left: 4px solid #000 !important;
+  }
+/*редактор кода*/
+  .CodeMirror {
+    background: none repeat scroll 0% 0% #363636;
+    color: #AAA;
   }
 
 /* Pagination */
