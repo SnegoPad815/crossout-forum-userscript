@@ -310,6 +310,11 @@ form > .gaijin-important-post + article {
 	.ipsBox:not(.ipsBox_transparent):not(.ipsModerated){
 		background: none repeat scroll 0% 0% #1B1B1B;
 	}
+  /*эффект выделения текста в firefox*/
+  ::-moz-selection {
+    background: #494949; 
+    color:#CCC;
+  }
 
 /*Тёмная тема*/
 
@@ -317,6 +322,11 @@ form > .gaijin-important-post + article {
 body, a{
 color: #CCC;
 }
+
+  /*картинка в шапке темнее*/
+  #ipsLayout_header header {
+    background-image: url('https://puu.sh/s9zzP/ba8598d160.png');
+  }
 
   /*все текстовые/выпадающие поля ввода*/
   input:not(#elSearchField), textarea, select,
@@ -864,7 +874,16 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     background-color: #666;
   }
 
-  /*панель выбора цвета/фона текста*/
+  /*текст в контекстном меню*/
+  .cke_menubutton_label{
+    color:#DDD;
+  }
+  .cke_menubutton:hover,
+  .cke_menubutton:focus,
+  .cke_menubutton:active {
+    background-color: #555;
+}
+  /*панель выбора цвета/фона текста/контектсное меню редактора*/
   .cke_panel{
     background-color: #222;
   }
@@ -1139,6 +1158,10 @@ iframe[data-embedContent],
 
 .ipsEmoticons_item[data-emoticon]:hover {
 	background: #111;
+}
+  /*ограничение ширины смайликов с списке*/
+  .ipsEmoticons_item {
+    max-width: 60px;
 }
 
 /*блок кода в сообщении*/
