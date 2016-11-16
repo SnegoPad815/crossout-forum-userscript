@@ -397,29 +397,30 @@ color: #CCC;
     border-radius: 3px;
 }
 
+  /*исправляет скопированный чёрный текст и белый фон*/
+  /* в сообщениях */
+	span[style*="background-color:rgb(255,255,255)"], /*белый фон*/
+	span[style*="background-color:rgb(250,250,250)"],
+	span[style*="background-color:rgb(245,245,245)"], /*чуть серый фон*/
+	ul[style*="background-color: rgb(245, 245, 245)"], /*маркированный список*/
+	ul[style*="background-color:rgb(245,245,245)"],
+	p[style*="background-color: rgb(245, 245, 245)"],/*текст*/
+	p[style*="background-color:rgb(245,245,245)"],
+	p[style*="background-color:rgb(255,255,255)"],
+	h4[style*="background-color: rgb(245, 245, 245)"],/*заголовок 4ур.*/
+	h3[style*="background-color:rgb(255,255,255)"],/*заголовок 3ур.*/
+	/*редкие комбинации*/
+  span[style*="color:rgb(11,0,0)"],/*просто чёррный текст*/
+	span[style*="color:#000000"], /*просто чёррный текст*/
+  strong[style*="background-color:rgb(245,245,245)"],
+	b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
+	div[style*="background-color:rgb(255,255,255)"],
+	div[style*="background-color:rgb(245,245,245)"],
+	div[style*="color: rgb(0, 0, 0)"], div[style*="color:rgb(0,0,0)"] /*стихи из форумной игры - Замочная скважина*/
+		{ color: #909090!important; background-color: transparent!important; }
 
-/*принудительная установка цвета текста для подписей*/
-div.cPost_contentWrap.ipsPad > div.ipsResponsive_hidePhone > div.ipsType_light.ipsType_richText > p,
-/*принудительная установка цвета текста и фона подписи Psycho_14*/
-div.cPost_contentWrap.ipsPad > div.ipsResponsive_hidePhone > div.ipsType_light.ipsType_richText > p > span{
-    background-color: transparent !important;
-    color: #888 !important;
-}
-
-/*исправляет скопированный чёрный текст*/
-div.cPost_contentWrap.ipsPad > div.ipsType_normal.ipsType_richText.ipsContained > p > span > span{
-    color: #AAA !important;    
-}
-
-/*исправляет установленный черный текст*/
-  .cPost_contentWrap > div:nth-child(1) > div:nth-child(n){
-    color: #AAA !important;        
-  }
-  /*черный текст под спойлером и с вообщении "замочная скважина"*/
-  .ipsSpoiler_contents > p > b > span,
-  .ipsPad .cPost_contentWrap >div:nth-child(1) > p > b > span {
-    color: #AAA !important;;
-  }
+	span[style*="background-color:rgb(228,239,228)"]/*зелёный фон цитиат из доп.сообщений*/
+	{background-color:#4C814C !important;color: #CCC!important;}
 
  /*фон уведомлений*/
   .ipsDataList_readStatus .ipsDataItem:not(.ipsDataItem_unread):not(.ipsDataItem_selected):not(.ipsModerated) {
@@ -761,6 +762,17 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   /*фон лимита диалогов в почте*/
 .ipsAttachment_progress{
     background: none repeat scroll 0% 0% #AAA;
+}
+
+  /*кнопка "покинуть диалог" в ЛС*/
+  .leave-conversation a{
+    color:#CCC;
+    border:1px solid #323232;
+    background-color:#444;
+  }
+  .leave-conversation a:hover{
+  border-color: #777;
+  background-color: #222;
 }
   
   /*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
@@ -1385,6 +1397,27 @@ hr.ipsHr {
   .cCalendar td {
     border: 1px solid #202020;
   }
+
+/*RSS (для firefox)*/
+  /*шапка подписки*/
+  #feedHeaderContainer {
+    background-color: #444;
+  }
+  #feedHeader {
+    color: #CCC;
+  }
+  /*фон*/
+  .feedBackground {
+    background-color: #444;
+  }
+  /*список тем*/
+  #feedHandler{
+    background: none repeat scroll 0% 0% #111;
+  }
+  #feedBody {
+    background: none repeat scroll 0% 0% #2D2D2D;
+  }
+
 
 /* Blog */
 #elBlogHeaderStats {
