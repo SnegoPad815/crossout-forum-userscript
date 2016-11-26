@@ -399,33 +399,47 @@ color: #CCC;
 
   /*исправляет скопированный чёрный текст и белый фон*/
   /* в сообщениях */
-	span[style*="background-color:rgb(255,255,255)"], /*белый фон*/
-	span[style*="background-color:rgb(251,251,251)"],
-	span[style*="background-color:rgb(250,250,250)"],
-	span[style*="background-color:rgb(245,245,245)"], /*чуть серый фон*/
-	ul[style*="background-color:rgb(245,245,245)"], /*маркированный список*/
-	p[style*="background-color:rgb(245,245,245)"], /*текст*/
-	p[style*="background-color:rgb(250,250,250)"],
-	p[style*="background-color:rgb(255,255,255)"],
-	h4[style*="background-color:rgb(245,245,245)"], /*заголовок 4ур.*/
-	h3[style*="background-color:rgb(255,255,255)"], /*заголовок 3ур.*/
-	/*РЕДКИЕ КОМБИНАЦИИ*/
-	.ipsContained > p > a[style*="background-color:rgb(245,245,245)"], /*скопирован ник над аватаркой*/
-	span[style*="color:rgb(11,0,0)"],/*просто чёррный текст*/
-	span[style*="color:#000000"], /*просто чёррный текст*/
-	span[style*="color:#272A34"],
-	strong[style*="background-color:rgb(245,245,245)"],
-	strong[style*="background-color:rgb(250,250,250)"],
-	b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
-	div[style*="background-color:rgb(255,255,255)"],
-	div[style*="background-color:rgb(245,245,245)"],
-	div[style*="color:rgb(0,0,0)"], /*стихи из форумной игры - Замочная скважина*/
-	div[style*="background-color:rgb(187,218,185)"], /*выползающий table*/
-	div[style*="color:rgb(40,40,40)"]
-		{ color: #909090!important; background-color: transparent!important; }
-
-	span[style*="background-color:rgb(228,239,228)"]/*зелёный фон цитиат из доп.сообщений*/
-	{background-color:#4C814C !important;color: #CCC!important;}
+  
+  span[style*="background-color:rgb(255,255,255)"], /*белый фон*/
+  span[style*="background-color:rgb(251,251,251)"],
+  span[style*="background-color:rgb(250,250,250)"],
+  span[style*="background-color:rgb(245,245,245)"], /*чуть серый фон*/
+  div[style*="background-color:rgb(255,255,255)"],
+  div[style*="background-color:rgb(245,245,245)"],
+  ul[style*='background-color:rgb(255,255,255)'],
+  ul[style*='background-color:rgb(250,250,250)'],
+  ul[style*="background-color:rgb(245,245,245)"], /*маркированный список*/
+  li[style*='background-color:rgb(255,255,255)'],
+  em[style*='background-color:rgb(255,255,255)'],
+  ol[style*='background-color:rgb(255,255,255)'],
+  ol[style*='background-color:rgb(245,245,245)'],
+  p[style*='background-color:rgb(251,251,251)'], /*текст*/
+  p[style*="background-color:rgb(250,250,250)"],
+  p[style*="background-color:rgb(245,245,245)"],
+  p[style*="background-color:rgb(255,255,255)"],
+  h4[style*="background-color:rgb(245,245,245)"], /*заголовок 4ур.*/
+  h3[style*="background-color:rgb(255,255,255)"], /*заголовок 3ур.*/
+  /*С ПРОБЕЛАМИ!*/
+  span[style*="color: rgb(0, 0, 0)"],
+  span[style*='background-color: rgb(255, 255, 255)'],	
+  span[style*='background-color: rgb(245, 245, 245)'],
+  div[style*="background-color: rgb(255, 255, 255)"],
+  div[style*="background-color: rgb(245, 245, 245)"],
+  ul[style*='background-color: rgb(255, 255, 255)'],
+  /*РЕДКИЕ КОМБИНАЦИИ*/
+  .ipsContained > p > a[style*="background-color:rgb(245,245,245)"], /*скопирован ник над аватаркой*/
+  span[style*="color:rgb(11,0,0)"],/*просто чёрный текст*/
+  span[style*="color:#000000"], /*просто чёрный текст*/
+  span[style*="color:#272A34"],
+  span[style*='color:rgb(40,40,40)'],
+  p[style*='color:rgb(40,40,40)'],
+  strong[style*="background-color:rgb(245,245,245)"],
+  strong[style*="background-color:rgb(250,250,250)"],
+  b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
+  div[style*="color:rgb(0,0,0)"], /*стихи из форумной игры - Замочная скважина*/
+  div[style*="background-color:rgb(187,218,185)"], /*выползающий table*/
+  div[style*="color:rgb(40,40,40)"]
+  { color: #909090!important; background-color: transparent!important; }
 
  /*фон уведомлений*/
   .ipsDataList_readStatus .ipsDataItem:not(.ipsDataItem_unread):not(.ipsDataItem_selected):not(.ipsModerated) {
@@ -524,15 +538,6 @@ color: #CCC;
 	border-color: rgba(255,255,255,0.1);
 }
 
-.ipsItemStatus.ipsItemStatus_large.ipsItemStatus_read {
-	background: rgba(0,0,0,0.3);
-	color: #808080;
-}
-
-.ipsItemStatus.ipsItemStatus_read:not( .ipsItemStatus_large ) {
-	color: #777;
-}
-
 /* Font colors that need resetting */
 .ipsType_pageTitle {
 	color: #ddd;
@@ -555,8 +560,7 @@ color: #CCC;
 }
 
   /*градиент в шапках категорий*/
-  .cTopic > h2.ipsType_sectionTitle,
-  .ipsBox > h2.ipsType_sectionTitle,
+  h2.ipsType_sectionTitle,
   /*счётчик результатов поиска*/
   .ipsType_sectionTitle{
     background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent;
@@ -568,11 +572,21 @@ color: #CCC;
   /*большая иконка непрочитанного сообщения*/
   .ipsItemStatus.ipsItemStatus_large {
     background: none repeat scroll 0% 0% #7D441E;
+    color: #CCC;
   }
   /*малая иконка непрочитанного сообщения*/
-  .ipsItemStatus:not( .ipsItemStatus_large ){
+  .ipsItemStatus.ipsItemStatus:not( .ipsItemStatus_large ){
     color: #7d441e;
   }
+
+.ipsItemStatus.ipsItemStatus_large.ipsItemStatus_read {
+	background: rgba(0,0,0,0.3);
+	color: #808080;
+}
+
+.ipsItemStatus.ipsItemStatus_read:not( .ipsItemStatus_large ) {
+	color: #777;
+}
 	
 .ipsWidget.ipsWidget_vertical .ipsWidget_inner,
 #elSiteTitle,
