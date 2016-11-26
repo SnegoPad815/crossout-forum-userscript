@@ -12,7 +12,7 @@
 // @include     https://forum.crossout.net/*
 // @include     http://*.forum.crossout.net/*
 // @include     https://*.forum.crossout.net/*
-// @version     0.2.1
+// @version     0.2.2
 // @grant       none
 // ==/UserScript==
 
@@ -80,6 +80,18 @@ function checkCover(){
     }
 }
 
+function posIMG()
+{
+  /*абсолютное значение смещения*/
+  var offset = document.getElementsByClassName('ipsPageHead_special')[0].dataset.coveroffset;
+
+  var select = $(".ipsCoverPhoto_photo");
+  var natHeight = ips.utils.position.naturalHeight(select.eq(0));
+  var realHeight = select.eq(0).outerHeight();
+  var newOffset = Math.floor(offset*realHeight/natHeight);
+  select[0].style.top = '-'+newOffset+'px';
+}
+
 
 function addProfileCover(ProfileHead, ProfileID) {
 
@@ -88,33 +100,41 @@ function addProfileCover(ProfileHead, ProfileID) {
     /*если есть совпадение добавляем фон*/
     if (ProfileID==covers[i].id)
     {
+      var ht = '<img style="opacity: 1; position: absolute; left: 0px; top: 0px;" src="'+covers[i].url+'" class="ipsCoverPhoto_photo" alt="">';
       var new_div = document.createElement('div');
-      new_div.className = 'ipsCoverPhoto_container';
 
+      new_div.className = 'ipsCoverPhoto_container';
+      new_div.innerHTML = ht;
+
+      ProfileHead.insertBefore(new_div, ProfileHead.firstChild);
       ProfileHead.dataset.coveroffset = covers[i].top;
 
-      var url = covers[i].url;
-      var ht = '<img style="opacity: 1; position: absolute; left: 0px; top: 0px;" src="'+url+'" class="ipsCoverPhoto_photo" alt="">';
-      new_div.innerHTML = ht;
-      ProfileHead.insertBefore(new_div, ProfileHead.firstChild);
-
-      var offset = getOffsset(covers[i].top);
-      ProfileHead.getElementsByClassName("ipsCoverPhoto_photo")[0].style.top = '-'+offset+'px';
+      setOffset(covers[i].top);
     }
   }
 }
 
-function posIMG()
-{
-/*абсолютное значение смещения*/
-	var offset = document.getElementsByClassName('ipsPageHead_special')[0].dataset.coveroffset;
-	document.getElementsByClassName('ipsCoverPhoto_photo')[0].style.top = '-'+getOffsset(offset)+'px';
-}
+function setOffset(param){
 
-/*смещение для уменьшеной картинки (относительно масштаба)*/
-function getOffsset(param)
-{
-	var natHeight = ips.utils.position.naturalHeight($(".ipsCoverPhoto_photo").last());
-	var realHeight = $(".ipsCoverPhoto_photo").last().outerHeight();
-	return Math.floor(param*realHeight/natHeight);
+  // Задержка 0.5 секунды и проверка на наличие размеров у картинки
+  function checkImageLoad() {
+    setTimeout(function () {
+      var select = $(".ipsCoverPhoto_photo");
+      if( !(select.last().outerHeight() > 0)){
+        checkImageLoad();
+      }else{
+        setPosition();}
+    }, 500);
+  }
+
+  /*рассчёт и установка смещения*/
+  function setPosition() {
+    var select = $(".ipsCoverPhoto_photo");
+    var natHeight = ips.utils.position.naturalHeight(select.last());
+    var realHeight = select.last().outerHeight();
+    var newOffset = Math.floor(param*realHeight/natHeight);
+    select[select.length-1].style.top = '-'+newOffset+'px';
+  }
+
+  checkImageLoad();
 }
