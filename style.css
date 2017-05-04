@@ -472,7 +472,12 @@ color: #CCC;
   span[style*='color:rgb(39,42,52)'], /*.net*/
   span[style*="color:#444444"], 
   span[style*="color:#333333"],
+  span[style*="color:#525252"],
+  span[style*="color:#282828"],
+  span[style*="color:#111111"],
+  span[style*="color:#2b2e2f"],
   p[style*='color:#000000'], /*копи-паста из письма*/	 
+  p[style*="color:#333"],
   p[style*="color:#272a34"], 
   p[style*='color:rgb(40,40,40)'],
   h3[style*='color:#000000'],
@@ -481,6 +486,7 @@ color: #CCC;
   strong[style*="background-color:rgb(250,250,250)"],
   font[color*="#444444"], 
   font[color*='#000000'],
+  div[style*="color:#000000"],
   b[style*="color:#333333"],
   b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
   div[style*='color:#272a34'],
@@ -843,8 +849,15 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 
   /*фон лимита диалогов в почте*/
 .ipsAttachment_progress{
-    background: none repeat scroll 0% 0% #AAA;
-}
+    background: none repeat scroll 0% 0% #CCC;
+    border: 0px;
+  }
+  /*полоска заполненности*/
+  .ipsAttachment_progress > span {
+    background: none repeat scroll 0% 0% rgb(37, 156, 52);
+    border-radius: 0px;
+    height: 12px;
+  }
 
   /*кнопка "покинуть диалог" в ЛС*/
   .leave-conversation a{
@@ -1021,7 +1034,11 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075), 0px 1px 9px #666;
 }
 
-	
+/*уведомление о том, что сообщения в теме модерируются*/
+.ipsMessage_warning {
+	background: none repeat scroll 0% 0% #1B1B1B;
+	color: #C75050;
+}	
 	
 .ipsFieldRow_required {
 	color: #ff6262;
@@ -1395,9 +1412,10 @@ hr.ipsHr {
 	color: #555;
 }
 
-.ipsProgressBar_progress {
-	background: #e0e0e0;
-	color: #333;
+	.ipsProgressBar_progress {
+  font-size: 22px;
+	background: #259C34;
+	color: #1b1b1b;
 	text-shadow: 0 0 0;
 }
 
@@ -1406,7 +1424,7 @@ hr.ipsHr {
 }
 
 .ipsProgressBar_progress[data-progress]:after {
-	color: #333;
+	color: #1b1b1b;
 }
 
 	.ipsThumb, .ipsImage_thumbnailed {
