@@ -38,6 +38,11 @@
   img {filter: brightness(0.8); transition: 0.25s;} /*до наведения*/
   img:hover {filter: brightness(1);} /*после наведения*/
 
+	/*скрыть лычки*/
+	.gaijin-medals{
+		display:none;
+	}
+
  /*зафиксированная пользовательская панель*/
   #elUserNav {
     background-color: rgb(0, 132, 168) !important;
@@ -57,6 +62,10 @@
 .ipsComment.ipsComment_popular .ipsComment_popularFlag {
     z-index: 2000;
 }
+	/*рамка вокруг "популярного сообщения" - одноцветная */
+	.ipsComment.ipsBox.ipsComment_popular:not(.ipsModerated):not(.ipsComment_selected){
+		border-color: #37848B;
+	}
   
   /*широкое поле доп. сообщения от админа под сообщением*/  
   .post-note {
@@ -477,19 +486,34 @@ color: #CCC;
   span[style*="color:#111111"],
   span[style*="color:#2b2e2f"],
   p[style*='color:#000000'], /*копи-паста из письма*/	 
-  p[style*="color:#333"],
   p[style*="color:#272a34"], 
+  p[style*="color:#282828"],
+  p[style*="color:#333"],
+  p[style*="color:rgb(39,42,52)"],
   p[style*='color:rgb(40,40,40)'],
   h3[style*='color:#000000'],
+  h4[style*="color:#272a34"],
   strong[style*="color:#272a34"], 
   strong[style*="background-color:rgb(245,245,245)"],
   strong[style*="background-color:rgb(250,250,250)"],
-  font[color*="#444444"], 
+  font[color*="#444444"],
+  font[color*="#333333"],
+  font[color*="#111111"],
   font[color*='#000000'],
+  table[style*="color:#272a34"],  /*текст в таблице*/
+  table[style*="color:#000"],
   div[style*="color:#000000"],
-  b[style*="color:#333333"],
-  b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
   div[style*='color:#272a34'],
+  div[style*="color:#282828"],
+  ul[style*="color:#272a34"],
+  ul[style*="color:#222222"],
+  li[style*="color:#282828"],
+  li[style*="color:rgb(39,42,52)"],
+  ol[style*="color:#272a34"],
+  b[style*="color:#333333"],
+
+  b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
+  div[style*='color:rgb(39,42,52)'],
   div[style*="color:rgb(0,0,0)"], /*стихи из форумной игры - Замочная скважина*/
   div[style*="background-color:rgb(187,218,185)"], /*выползающий table*/
   div[style*='background:rgb(255,255,255)'], /*копи-паста формы прикрепления файлов к сообщению*/
@@ -628,16 +652,16 @@ color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
     background: none repeat scroll 0% 0% #41270d;
 }
 
-  /*градиент в шапках категорий*/
-  h2.ipsType_sectionTitle,
-  /*счётчик результатов поиска*/
-  .ipsType_sectionTitle{
-    background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent;
-  }
-  /*полоса под номерами страниц*/
-  .ipsButtonBar {
-      background: none repeat scroll 0% 0% #3C1500;
-  }
+	/*градиент в шапках категорий*/
+	h2.ipsType_sectionTitle,
+	/*счётчик результатов поиска*/
+	.ipsType_sectionTitle{
+		background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent !important;
+	}
+	/*полоса под номерами страниц*/
+	.ipsButtonBar {
+		background: none repeat scroll 0% 0% #3C1500 !important;
+	}
   /*большая иконка непрочитанного сообщения*/
   .ipsItemStatus.ipsItemStatus_large {
     background: none repeat scroll 0% 0% #7D441E;
@@ -1049,11 +1073,13 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 	color: #999;
 }
 
-.ipsComposeArea_editor {
-	background: #444;
-}
+	.ipsComposeArea_editor,
+	.ipsComposeArea_unavailable .ipsComposeArea_editor{
+		background: #444;
+	}
 
-	html[dir="ltr"] .ipsComposeArea_withPhoto .ipsComposeArea_editor:before {
+	html[dir="ltr"] .ipsComposeArea_withPhoto .ipsComposeArea_editor:before,
+	html[dir="ltr"] .ipsComposeArea_unavailable.ipsComposeArea_withPhoto .ipsComposeArea_editor:before{
 		border-color: transparent #444 transparent transparent;
 	}
 	html[dir="rtl"] .ipsComposeArea_withPhoto .ipsComposeArea_editor:before {
