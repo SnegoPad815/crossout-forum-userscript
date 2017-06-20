@@ -28,11 +28,17 @@
     width: 40px;
     height: 40px;
     font-size: 51px;
-    color: #FFF;
+    color: #EEE;
     line-height: 41px;
     background: none repeat scroll 0% 0% #B90606;
     border-radius: 0px;
   }
+	/*в опросе. кнопка удалить вариант ответа*/
+	.cPollChoices > li > div > .ipsButton_narrow {
+		background: none repeat scroll 0% 0% #B11414 !important;
+		color: #EEE;
+		border: none;
+	}
 
   /*Затемнение картинок*/
   img {filter: brightness(0.8); transition: 0.25s;} /*до наведения*/
@@ -479,12 +485,13 @@ color: #CCC;
   span[style*='color:rgb(43,46,47)'], /*.net*/
   span[style*='color:rgb(40,40,40)'],
   span[style*='color:rgb(39,42,52)'], /*.net*/
+  span[style*="color:#525252"],
   span[style*="color:#444444"], 
   span[style*="color:#333333"],
-  span[style*="color:#525252"],
-  span[style*="color:#282828"],
-  span[style*="color:#111111"],
   span[style*="color:#2b2e2f"],
+  span[style*="color:#282828"],
+  span[style*="color:#222222"],
+  span[style*="color:#111111"],
   p[style*='color:#000000'], /*копи-паста из письма*/	 
   p[style*="color:#272a34"], 
   p[style*="color:#282828"],
@@ -493,24 +500,29 @@ color: #CCC;
   p[style*='color:rgb(40,40,40)'],
   h3[style*='color:#000000'],
   h4[style*="color:#272a34"],
+  h2[style*="color:#333333"],
   strong[style*="color:#272a34"], 
   strong[style*="background-color:rgb(245,245,245)"],
   strong[style*="background-color:rgb(250,250,250)"],
   font[color*="#444444"],
   font[color*="#333333"],
+  font[color*="#222222"],
   font[color*="#111111"],
   font[color*='#000000'],
   table[style*="color:#272a34"],  /*текст в таблице*/
   table[style*="color:#000"],
-  div[style*="color:#000000"],
-  div[style*='color:#272a34'],
+  div[style*="color:#333333"]
   div[style*="color:#282828"],
+  div[style*='color:#272a34'],
+  div[style*="color:#000000"],
   ul[style*="color:#272a34"],
   ul[style*="color:#222222"],
   li[style*="color:#282828"],
   li[style*="color:rgb(39,42,52)"],
   ol[style*="color:#272a34"],
   b[style*="color:#333333"],
+  b[style*="color:#272a34"],
+  i[style*="color:#222222"],
 
   b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
   div[style*='color:rgb(39,42,52)'],
@@ -570,28 +582,7 @@ color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
   /*контур "стрелочки"*/
   html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:before {
     border-color: transparent #181818 transparent transparent !important;
-  }
-
-	
-	/*выпадающий список разделов в поиске*/
-	.ipsSelectTree	{
-    background: none repeat scroll 0% 0% #565656;
-	}
-	.ipsSelectTree_nodes {
-    padding: 3px;
-    background: none repeat scroll 0% 0% #565656;
-}
-	
-	.ipsSelectTree_nodes [data-role="nodeList"] {
-    background: none repeat scroll 0% 0% #232323;
-	}
-	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item:not( .ipsSelectTree_itemDisabled ):hover{
-	background:#777;
-}
-	.ipsSelectTree_nodes [data-role="nodeList"] li{
-		border-bottom: 1px solid #484848;
-	}
-	
+  }	
 	/*поиск по автору*/
 	.ipsAutocompleteMenu_item {
     background: none repeat scroll 0% 0% #1E1E1E;
@@ -816,32 +807,39 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 }
 
 /* Forms */
-.ipsApp .ipsField_autocomplete,
-.ipsApp textarea,
-.ipsApp input[type="text"],
-.ipsApp input[type="password"],
-.ipsApp input[type="datetime"],
-.ipsApp input[type="datetime-local"],
-.ipsApp input[type="date"],
-.ipsApp input[type="month"],
-.ipsApp input[type="time"],
-.ipsApp input[type="week"],
-.ipsApp input[type="number"],
-.ipsApp input[type="email"],
-.ipsApp input[type="url"],
-.ipsApp input[type="search"],
-.ipsApp input[type="tel"]/*,
-.ipsApp select:not( [multiple] )*/ {
-	color: #333;
-}
+	.ipsApp .ipsField_autocomplete,
+	.ipsApp textarea,
+	.ipsApp input[type="text"],
+	.ipsApp input[type="password"],
+	.ipsApp input[type="datetime"],
+	.ipsApp input[type="datetime-local"],
+	.ipsApp input[type="date"],
+	.ipsApp input[type="month"],
+	.ipsApp input[type="time"],
+	.ipsApp input[type="week"],
+	.ipsApp input[type="number"],
+	.ipsApp input[type="email"],
+	.ipsApp input[type="url"],
+	.ipsApp input[type="search"],
+	.ipsApp input[type="tel"]/*,
+	.ipsApp select:not( [multiple] )*/ {
+		border-color: #484848 #555 #585858 #555;
+		color:#333;
+	}
 
  /*стрелка выпадающего списка. "другая" сортировка тем в разделе*/
- .ipsApp select:not( [multiple] ){
-    background-image: url("https://forum.crossout.ru/uploads/set_resources_5/84c1e40ea0e759e3f1505eb1788ddf3c_select_dropdown.png") !important;
-    background-position: right center !important;
-    background-size: 18px 9px, 100% 100% !important;
-    background-repeat: no-repeat !important;
-  }
+	.ipsApp select:not([multiple]){
+		background-image: url("https://forum.crossout.ru/uploads/set_resources_5/84c1e40ea0e759e3f1505eb1788ddf3c_select_dropdown.png"), linear-gradient(to bottom, #393939 0%, #232323 100%) !important;
+		background-position: right center !important;
+		background-size: 18px 9px, 100% 100% !important;
+		background-repeat: no-repeat !important;
+		border: 1px solid #555 !important;
+		min-width: 330px;
+	}
+/*эффект при наведении курсора*/
+	.ipsApp select:not([multiple]):hover{
+		background-image: url("https://forum.crossout.ru/uploads/set_resources_5/84c1e40ea0e759e3f1505eb1788ddf3c_select_dropdown.png"), linear-gradient(to bottom, #333 0%, #222 100%) !important;
+	}
 
 /*фон лайков если их 0*/
   .ipsPos_right > .ipsReputation_count{    
@@ -963,11 +961,16 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     background-color:rgba(0, 0, 0, 0.2);
   }
 
-  /*инвертированный цвет иконок*/
-  .cke_button_icon{
-    background-image: url("https://forum.crossout.ru/uploads/monthly_2016_11/icons.png.8075e6ec32828df44ef720e4c48a6b78.png") !important;
-    filter: brightness(0.9) !important;
-  }
+/*инвертированный цвет иконок*/
+	.cke_button_icon,
+	.cke_ltr .cke_button__indent_icon,
+	.cke_ltr .cke_button__outdent_icon,
+	.cke_ltr .cke_button__ipspreview_icon,
+	.cke_ltr .cke_button__numberedlist_icon,
+	.cke_ltr .cke_button__bulletedlist_icon{
+		background-image: url("https://forum.crossout.ru/uploads/monthly_2016_11/icons.png.8075e6ec32828df44ef720e4c48a6b78.png") !important;
+		filter: brightness(0.9) !important;
+	}
   /*разделитель между группами иконок*/
   .cke_toolbar_separator {
     background-color: #444;
@@ -1112,15 +1115,12 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 	background: rgba(0,0,0,0.8);
 }
 
-.ipsDialog > div,
-.ipsDialog .ipsDialog_loading {
-	background: #222;
-}
-
-.ipsDialog_title,
-.ipsDialog_close {
-	color: #fff;
-}
+	/*все диалоговые окна ограничены по ширине*/
+	.ipsDialog > div,
+	.ipsDialog .ipsDialog_loading {
+		max-width: 600px;
+		background: #222;
+	}
 
   .ipsHovercard {
     background-color: #1b1b1b;
@@ -1230,6 +1230,60 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   .post-note.pn-type-3 {
     background-color: rgba(200, 183, 0, 0.6);
   }
+
+	/*дилоговое окно создания новой темы*/
+	/*заголовок окна*/
+	.ipsDialog_title {
+		color: #DDD;
+	}
+	/*стрелочка вниз. на кнопке для раскрытия списка*/
+	.ipsSelectTree_expand,
+	/*текст на кнопке*/
+	.ipsSelectTree_placeholder{
+		color: #CCC;
+	}
+	/*убрана рамка вокруг выпадающего списка*/
+	.ipsSelectTree_nodes {
+		padding: 0px;
+		border-color: #555;
+	}
+	/*кнопка выпадающего списка*/
+	.ipsSelectTree {
+		border: 1px solid #555;
+		background: linear-gradient(to bottom, #393939 0%, #232323 100%) repeat scroll 0% 0% transparent;
+	}
+	/*кнопка выпадающего списка*/
+	.ipsSelectTree:hover {
+		background: linear-gradient(to bottom, #333 0%, #222 100%) repeat scroll 0% 0% transparent;
+	}
+	/*фон выпадающего списка*/
+	.ipsSelectTree_nodes [data-role="nodeList"] {
+		background: none repeat scroll 0% 0% #232323;
+	}
+	/*убраны полоски между строками*/
+	.ipsSelectTree_nodes [data-role="nodeList"] li {
+		border-bottom: 0px;
+	}
+	/*уменьшены интервалы между обычными строками*/
+	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item {
+		padding: 3px 25px 3px 22px;
+	}
+	/*уменьшены интервалы между категориями*/
+	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item.ipsSelectTree_withChildren {
+		padding: 4px 7px;
+	}
+	/*фон выделенной строки */
+	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item:hover:not(.ipsSelectTree_itemDisabled) {
+		background: none repeat scroll 0% 0% #383838;
+	}
+	/*Орнжевый цвет текста у недоступных строк и у раскрываемых категорий*/
+	.ipsSelectTree_itemDisabled > [data-role="nodeTitle"] {
+		color: #D29B48;
+	}
+	/*слева полоска уровня списка */
+	html[dir="ltr"] .ipsSelectTree_nodes [data-role="nodeList"] li [data-role="childWrapper"] {
+		border-left: 1px dotted #505050;
+	}
 
 /* Profile */
 /* Box shadow doesn't look good here, so remove it */
@@ -1418,7 +1472,7 @@ hr.ipsHr {
 	background: #000;
 	}
 	#elSearch input[type="search"]{
-		color: #FFF;
+		color: #DDD;
 	}
 	#elSearch #elSearchFilter {
     color: rgb(192, 192, 192);
