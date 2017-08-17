@@ -63,15 +63,6 @@
     right: -12px;
     top: 10px;
 }
-
-  /*ярлык популярного сообщения*/
-.ipsComment.ipsComment_popular .ipsComment_popularFlag {
-    z-index: 2000;
-}
-	/*рамка вокруг "популярного сообщения" - одноцветная */
-	.ipsComment.ipsBox.ipsComment_popular:not(.ipsModerated):not(.ipsComment_selected){
-		border-color: #37848B;
-	}
   
   /*широкое поле доп. сообщения от админа под сообщением*/  
   .post-note {
@@ -89,10 +80,7 @@
     border: 0px !important;
     box-shadow: 0 0 10px #03c10b;
 }  
-.ipsComment_highlighted.ipsBox:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected),
-.ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected),
-.ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected) > div:nth-child(1) > div:nth-child(2),
-.ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected) .ipsAreaBackground_reset {
+.ipsComment_highlighted.ipsBox:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected):not(.ipsComment_popular), .ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected):not(.ipsComment_popular) .ipsAreaBackground_reset{
 	background-color: #152D14;
 }
 
@@ -337,6 +325,13 @@ form > .gaijin-important-post + article {
 body, a{
 color: #CCC;
 }
+	/*фон стрницы*/	
+	#ipsLayout_body {
+		background-color: #000;
+	}	
+	body{
+		background-color: #000;
+	}
 
   /*картинка в шапке темнее*/
   #ipsLayout_header header {
@@ -484,7 +479,7 @@ color: #CCC;
   span[style*="color:#272a34"],
   span[style*='color:rgb(43,46,47)'], /*.net*/
   span[style*='color:rgb(40,40,40)'],
-  span[style*='color:rgb(39,42,52)'], /*.net*/
+  span[style*="color:rgb(39,42,52)"],
   span[style*="color:#525252"],
   span[style*="color:#444444"], 
   span[style*="color:#333333"],
@@ -504,6 +499,7 @@ color: #CCC;
   strong[style*="color:#272a34"], 
   strong[style*="background-color:rgb(245,245,245)"],
   strong[style*="background-color:rgb(250,250,250)"],
+  strong[style*="color:rgb(39,42,52)"],
   font[color*="#444444"],
   font[color*="#333333"],
   font[color*="#222222"],
@@ -514,15 +510,19 @@ color: #CCC;
   div[style*="color:#333333"]
   div[style*="color:#282828"],
   div[style*='color:#272a34'],
+  div[style*="color:#111111"],
   div[style*="color:#000000"],
   ul[style*="color:#272a34"],
   ul[style*="color:#222222"],
   li[style*="color:#282828"],
+  li[style*="color:#000000"]
   li[style*="color:rgb(39,42,52)"],
   ol[style*="color:#272a34"],
   b[style*="color:#333333"],
   b[style*="color:#272a34"],
+  b[style*="color:#222222"],	
   i[style*="color:#222222"],
+  em[style*="color:rgb(39,42,52)"],
 
   b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
   div[style*='color:rgb(39,42,52)'],
@@ -575,14 +575,6 @@ color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
     background: none repeat scroll 0% 0% #969696 !important;
 }
 
-  /*"стрелочка" влево от события в активности*/
-  html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem:after {
-    border-color: transparent #1B1B1B transparent transparent !important;
-}
-  /*контур "стрелочки"*/
-  html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:before {
-    border-color: transparent #181818 transparent transparent !important;
-  }	
 	/*поиск по автору*/
 	.ipsAutocompleteMenu_item {
     background: none repeat scroll 0% 0% #1E1E1E;
@@ -854,10 +846,35 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     color: #EEE; /*#D43B2D;*/
 }
 
+	/* фон счетчика лайков/хаха/вверх/жалко/не понял/благодарю*/
+	.ipsReact_reactCount{
+		background-color: #868686;
+	}
+	/* серая полоска справа от лайков*/
+	html[dir="ltr"] .ipsReact_blurb:not(.ipsHide) + .ipsReact_types{
+		border-left: 1px solid #606060;
+	}
+
   /*фон 0-й репутации в профиле*/
   .cProfileRepScore_neutral {
     background: none repeat scroll 0% 0% #555;
   }
+
+	/*ярлык популярного сообщения*/
+	.ipsComment.ipsComment_popular .ipsComment_popularFlag {
+		top: -1px;
+		z-index: 2000;
+		background: #8D5116;
+		height: 54px;
+		padding-top: 27px;
+	}
+	.ipsComment.ipsComment_popular .ipsComment_popularFlag::after {
+		border-color: #8D5116 transparent transparent transparent;
+	}
+	/*рамка вокруг "популярного сообщения" - одноцветная */
+	.ipsComment.ipsBox.ipsComment_popular:not(.ipsModerated):not(.ipsComment_selected){
+		border-color: #8D5116;
+	}
 
 /*счётчики сообщений*/
   .ipsCommentCount,.ipsFollow .ipsCommentCount {
@@ -892,12 +909,24 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   background-color: #222;
 }
   
-  /*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
-  .ipsApp .ipsButton_light,
-  /*кнопка профиль*/
-  .ipsApp .ipsButton_veryLight{
-    background: none repeat scroll 0% 0% #888;
-    border-color: #777;
+	/*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
+	.ipsApp .ipsButton_link.ipsFollow, .ipsApp .ipsButton_link.ipsPromote
+	/*кнопка профиль*/
+	.ipsApp .ipsButton_veryLight{
+		background: none repeat scroll 0% 0% #888;
+		border-color: #777;
+		color: #CCC;
+	}
+
+  /*кнопка сортировка, фильтр, детали*/
+  .ipsButtonBar .ipsButtonRow li > a,
+  .ipsButtonBar .ipsButtonRow li > button,
+  .ipsButtonBar .ipsButtonRow li > span,
+  .ipsButtonRow li > a,
+  .ipsButtonRow li > button,
+  .ipsButtonRow li > span{
+    background: none repeat scroll 0% 0% #666;  
+    color: #DDD;  
   }
 	
 	/*окно предупреждения*/
@@ -983,6 +1012,11 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   a.cke_button_off:hover{
       background: none repeat scroll 0% 0% #666;
   }
+	a.cke_button_disabled:hover,
+	a.cke_button_disabled:focus,
+	a.cke_button_disabled:active {
+		background: none repeat scroll 0% 0% #363636;
+	}
 
 /*фон выпадающего списка шрифт/размер*/
   .cke_panel_list {
@@ -1273,8 +1307,8 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 		padding: 4px 7px;
 	}
 	/*фон выделенной строки */
-	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item:hover:not(.ipsSelectTree_itemDisabled) {
-		background: none repeat scroll 0% 0% #383838;
+	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item:not( .ipsSelectTree_itemDisabled ):hover {
+		background: none repeat scroll 0% 0% #383838 !important;
 	}
 	/*Орнжевый цвет текста у недоступных строк и у раскрываемых категорий*/
 	.ipsSelectTree_itemDisabled > [data-role="nodeTitle"] {
@@ -1305,19 +1339,19 @@ body[data-pageapp="core"][data-pagemodule="discover"][data-pagecontroller="strea
 	background: transparent;
 	padding: 0;
 }
+	/*списке активности. рамка вокруг сообщений*/
+	.ipsStreamItem.ipsStreamItem_contentBlock {
+		border: 1px solid #363636;
+	}
 
-html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:after {
-	border-color: transparent #333333 transparent transparent;
-}
-html[dir="rtl"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:after {
-	border-color: transparent transparent transparent #333333;
-}
-html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:before {
-	border-color: transparent #222222 transparent transparent;
-}
-html[dir="rtl"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:after {
-	border-color: transparent transparent transparent #222222;
-}
+  /*"стрелочка" влево от события в активности*/
+  html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem:after {
+    border-color: transparent #1B1B1B transparent transparent;
+  }
+  /*контур "стрелочки"*/
+  html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:before {
+    border-color: transparent #363636 transparent transparent;
+  }	 
 
 .ipsStream .ipsStreamItem_contentType {
 	background: #d1d1d1;
@@ -1534,6 +1568,21 @@ hr.ipsHr {
   .ipsApp .ipsDataItem_selected {
     background-color: #353535;
 }
+
+	/*окно-ссылка на тему*/
+	body[data-role="internalEmbed"]{
+		background-color: #242424;
+	}
+	iframe.ipsEmbed_finishedLoading[data-embedContent]{
+		background-color: transparent;
+	}
+	.ipsRichEmbed_itemTitle{
+		color: #CCC;
+	}
+	.ipsRichEmbed_openItem{
+		color: #fff;
+		opacity: 0.5;
+	}
   
 
 .ipsWidget {
@@ -1634,10 +1683,11 @@ hr.ipsHr {
     background-color: #2d2d2d;
   }
 
-  /*доска почёта. фикс высоты*/
-  .ipsGrid_span3.cTopMembers_member {
-    height: 288px !important;
-  }
+	/*доска почёта. фикс высоты*/
+	.ipsGrid_span3.cTopMembers_member {
+		height: 296px !important;
+	}
+
 	/*тёмная иконка кубка*/
 	.ipsLeaderboard_trophy{
 		color: #2D2D2D;
