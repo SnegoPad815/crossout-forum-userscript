@@ -910,7 +910,7 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 }
   
 	/*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
-	.ipsApp .ipsButton_link.ipsFollow, .ipsApp .ipsButton_link.ipsPromote
+	.ipsApp .ipsButton_link.ipsFollow, .ipsApp .ipsButton_link.ipsPromote, .ipsApp .ipsButton_light, 
 	/*кнопка профиль*/
 	.ipsApp .ipsButton_veryLight{
 		background: none repeat scroll 0% 0% #888;
