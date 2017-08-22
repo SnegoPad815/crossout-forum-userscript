@@ -10,7 +10,9 @@
   /*для подсказки "удалить форматирование"*/
   .ipsComposeArea_editorPaste .ipsComposeArea_editorPasteSwitch,
   /*в меню "мобильной" версии*/
-  .ipsDrawer_close
+  .ipsDrawer_close,
+  /*убрать лайк*/
+  html[dir="ltr"] .ipsReact_unreact
   {
     background: none repeat scroll 0% 0% #B11414;
 }
@@ -51,11 +53,11 @@
 
  /*зафиксированная пользовательская панель*/
   #elUserNav {
-    background-color: rgb(0, 132, 168) !important;
+    background-color: #666 !important;
     border-radius: 0px 0px 20px 20px;
     padding: 0px 14px !important;
     position: fixed;
-    z-index: 2001;
+    z-index: 6000;
     top: -3px !important;
 }
  /*счётчик писем и уведомлений опущены вниз*/
@@ -75,17 +77,17 @@
     background-color: #FFFAC9;
 }
 
-/*зелёный фон сообщения адаптирован для тёмной темы*/
-.ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected) {
+  /*зелёный фон сообщения адаптирован для тёмной темы*/
+  .ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected):not(.ipsComment_popular),
+  .ipsComment_highlighted.ipsBox:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected):not(.ipsComment_popular),
+  .ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected):not(.ipsComment_popular) .ipsAreaBackground_reset{
+    background: none repeat scroll 0% 0% #152D14;
     border: 0px !important;
     box-shadow: 0 0 10px #03c10b;
-}  
-.ipsComment_highlighted.ipsBox:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected):not(.ipsComment_popular), .ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected):not(.ipsComment_popular) .ipsAreaBackground_reset{
-	background-color: #152D14;
-}
+  }   
 
-/*Оранжевый фон сообщения адаптирован для тёмной темы*/
-form > .gaijin-important-post + article {   
+  /*Оранжевый фон сообщения адаптирован для тёмной темы*/
+  form > .gaijin-important-post + article {   
     background: none repeat scroll 0% 0% #482C12 !important;
     box-shadow: 0 0 10px #cf5200 !important;
   }
@@ -103,6 +105,23 @@ form > .gaijin-important-post + article {
     border-style: dashed;
     border-color: #C5794D/*417BA3*/;
 }
+
+
+/*отключение анимации лайков*/
+	.ipsReact_button a {
+		transition: unset;
+	}
+	.ipsReact_button {
+		transition: unset; 
+		transition-delay: unset; 
+	}
+	.ipsReact .ipsReact_types ul.ipsReact_hover {
+		animation:  reaction-hover 0.0s ease-in-out forwards;
+	}
+	.ipsReact .ipsReact_types ul.ipsReact_hoverOut{
+		animation:reaction-hover-out 0s ease-in-out 0s forwards;
+	}
+/*************/
 
 /*крестик поверх картинки в окне просмотра изображения*/
   .ipsLightbox_close
@@ -309,10 +328,7 @@ form > .gaijin-important-post + article {
   }
 
 /*Тёмная тема для FireFox*/
-.ipsAreaBackground_reset,
-	.ipsBox:not(.ipsBox_transparent):not(.ipsModerated){
-		background: none repeat scroll 0% 0% #1B1B1B;
-	}
+
   /*эффект выделения текста в firefox*/
   ::-moz-selection {
     background: #494949; 
@@ -327,7 +343,7 @@ color: #CCC;
 }
 	/*фон стрницы*/	
 	#ipsLayout_body {
-		background-color: #000;
+		background-color: #000 !important;
 	}	
 	body{
 		background-color: #000;
@@ -337,6 +353,11 @@ color: #CCC;
   #ipsLayout_header header {
     background-image: url('https://puu.sh/s9zzP/ba8598d160.png');
   }
+
+.ipsAreaBackground_reset,
+	.ipsBox:not(.ipsBox_transparent):not(.ipsModerated){
+		background: none repeat scroll 0% 0% #1B1B1B;
+	}
 
   /*все текстовые/выпадающие поля ввода*/
   input:not(#elSearchField), textarea, select,
@@ -562,19 +583,30 @@ color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
 }
 
 /*кнопки отображения активности*/
-  /*текст рядом с кнопками*/
-  .ipsButtonRow li > span  {
-    color: #eee;
-  }
-  /*активная - тёмная*/
-  .ipsButtonRow li > a.ipsButtonRow_active, .ipsButtonRow li > button.ipsButtonRow_active {
-    background: none repeat scroll 0% 0% #555;
-  }
-  /*не активная - светлая*/
-  .ipsAreaBackground_light .ipsButtonRow li > a:not(.ipsButtonRow_active) {
-    background: none repeat scroll 0% 0% #969696 !important;
-}
+	/*режим отображения сообщений в активности. активная кнопка*/
+	.ipsApp .ipsButton_primary {
+		border: 0px;
+		background-color: #111;
+		color: #CCC;
+		text-decoration: underline !important;
+	}
+	/*режим отображения сообщений в активности. неактивная кнопка*/
+	html[dir] .ipsButton_split > .ipsButton.ipsButton_link,
+	html[dir] .ipsButton_split > li > .ipsButton.ipsButton_link{
+		border: 1px solid #555;		
+		background-color: #333;
+		color: #EEE;
+	}
 
+	/*при наведении на активную кнопку нет эффекта*/
+	.ipsApp .ipsButton:hover:not(.ipsButton_noHover){
+		background-image: none;
+	}
+	/*наведение на неактивную кнопку*/
+	.ipsApp .ipsButton:hover:not(.ipsButton_primary){
+		background-color: #222 !important;
+		border: 1px solid #333 !important;
+	}
 	/*поиск по автору*/
 	.ipsAutocompleteMenu_item {
     background: none repeat scroll 0% 0% #1E1E1E;
@@ -654,43 +686,43 @@ color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
   .ipsItemStatus.ipsItemStatus:not( .ipsItemStatus_large ){
     color: #7d441e;
   }
+  .ipsItemStatus.ipsItemStatus_large.ipsItemStatus_read {
+    background: rgba(0,0,0,0.3);
+    color: #808080;
+  }
 
-.ipsItemStatus.ipsItemStatus_large.ipsItemStatus_read {
-	background: rgba(0,0,0,0.3);
-	color: #808080;
-}
+  .ipsItemStatus.ipsItemStatus_read:not( .ipsItemStatus_large ) {
+    color: #777;
+  }
 
-.ipsItemStatus.ipsItemStatus_read:not( .ipsItemStatus_large ) {
-	color: #777;
-}
-	
-.ipsWidget.ipsWidget_vertical .ipsWidget_inner,
-#elSiteTitle,
-.ipsType_sectionHead {
-	color: #f0f0f0;
-}
+  .ipsWidget.ipsWidget_vertical .ipsWidget_inner,
+  #elSiteTitle,
+  .ipsType_sectionHead {
+    color: #f0f0f0;
+  }
 
-.ipsType_richText,
-.ipsType_veryLarge {
-	color: /*#d0d0d0*/ #AAA;
-}
+  .ipsType_richText,
+  .ipsType_veryLarge,
+  .ipsStreamItem_snippet .ipsType_richText{
+    color: #AAA;
+  }
 
-.ipsFieldRow_desc {
-	color: #999;
-}
+  .ipsFieldRow_desc {
+    color: #999;
+  }
 
-/*текст на вкладках рейтинга лучших авторов*/
-.ipsTabs_small .ipsTabs_item:not( .ipsTabs_activeItem ) {
+  /*текст на вкладках рейтинга лучших авторов*/
+  .ipsTabs_small .ipsTabs_item:not( .ipsTabs_activeItem ) {
     color: #999 !important;
-}
-
+  }
 
 /* Reset nav areas for correct coloring */
 
-/*нижняя шапка с вкладками. создание новой темы. about me*/
-.ipsTabs{
+  /*нижняя шапка с вкладками. создание новой темы. about me*/
+  .ipsTabs{
     background: #333;
-}
+    border-top: none;
+  }
 
 	/*верхняя шапка с вкладками*/
 .ipsLayout_container > .ipsNavBar_primary{
@@ -850,10 +882,44 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 	.ipsReact_reactCount{
 		background-color: #868686;
 	}
-	/* серая полоска справа от лайков*/
+	/* серая полоска между счетчиком лайков и кнопкой*/
 	html[dir="ltr"] .ipsReact_blurb:not(.ipsHide) + .ipsReact_types{
-		border-left: 1px solid #606060;
+		border-left: 1px solid #323232;
 	}
+
+	/*рамка вокруг кнопки открывающей список "эмоций"*/
+	body.ipsApp_noTouch .ipsReact_types:hover .ipsReact_button,
+	body:not(.ipsApp_noTouch) .ipsReact_types.ipsReact_types_active .ipsReact_button {
+		border: none;
+		background: #494949;
+		box-shadow: none;
+		transform: none;
+	}
+	/*убрана рамка вокруг неактивной кнопки*/
+	.ipsReact_button{
+		border: none;
+	}
+	/*убран отступ под счетчиком лайков*/
+	.ipsReact_reactions + .ipsReact_overview {
+		margin-top: 0px;
+	}
+	/*подсказка над "эмоцией"*/
+	.ipsTooltip.ipsTooltip_top {
+		margin-top: -8px;
+	}
+
+  /*новая кнопка лайков*/
+  .ipsReact_button a{
+    filter: brightness(0.6);
+    transition: 0.25s;
+  }
+  .ipsReact_button a:hover{
+    filter: brightness(1);
+  }
+  /*убрана рамка вокруг лайков в активности*/
+  .ipsReactOverview ul img {
+    border: none;
+  }
 
   /*фон 0-й репутации в профиле*/
   .cProfileRepScore_neutral {
@@ -864,10 +930,12 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
 	.ipsComment.ipsComment_popular .ipsComment_popularFlag {
 		top: -1px;
 		z-index: 2000;
+		color: #eee;
 		background: #8D5116;
 		height: 54px;
 		padding-top: 27px;
 	}
+	/*нижний уголок ярлыка*/
 	.ipsComment.ipsComment_popular .ipsComment_popularFlag::after {
 		border-color: #8D5116 transparent transparent transparent;
 	}
@@ -908,13 +976,22 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   border-color: #777;
   background-color: #222;
 }
+	/*ЛС. разделитель между списком участников*/
+	html[dir="ltr"] .cMessage_members > ol > li {
+		border-right: 2px solid #323232;
+	}
+
+  /*ЛС рамка сообщения*/
+  .ipsComment:not( .ipsModerated ) .ipsComment_header{
+    border-top: none;
+  }
   
 	/*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
 	.ipsApp .ipsButton_link.ipsFollow, .ipsApp .ipsButton_link.ipsPromote, .ipsApp .ipsButton_light, 
 	/*кнопка профиль*/
 	.ipsApp .ipsButton_veryLight{
-		background: none repeat scroll 0% 0% #888;
-		border-color: #777;
+		background: none repeat scroll 0% 0% #444;
+		border-color: #474747;
 		color: #CCC;
 	}
 
@@ -925,7 +1002,7 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   .ipsButtonRow li > a,
   .ipsButtonRow li > button,
   .ipsButtonRow li > span{
-    background: none repeat scroll 0% 0% #666;  
+    background: none repeat scroll 0% 0% #444;  
     color: #DDD;  
   }
 	
@@ -1442,6 +1519,9 @@ iframe[data-embedContent],
   .ipsPagination .ipsPagination_page.ipsPagination_active a {
     background: none repeat scroll 0% 0% #323232 !important;
   }
+  .ipsButtonBar .ipsPagination .ipsPagination_pageJump a{
+    color: #CCC;
+  }
   
   /*эффект от наведения*/
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_page a:hover,
@@ -1568,6 +1648,16 @@ hr.ipsHr {
   .ipsApp .ipsDataItem_selected {
     background-color: #353535;
 }
+
+  /*шапка сообщения в "мобильной" версии*/
+  .cPost.ipsComment:not(.ipsComment_selected):not(.ipsModerated) .cAuthorPane {
+    background: transparent;
+  }
+
+  /*список лидеров за день/месяц/год на главной. выпадающий список. "мобильная" версия */
+  .ipsTabs:target [role="tablist"], .ipsTabs.ipsTabs_showMenu [role="tablist"] {
+    background: #000;
+  }
 
 	/*окно-ссылка на тему*/
 	body[data-role="internalEmbed"]{
