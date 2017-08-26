@@ -1,8 +1,8 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
 @-moz-document domain("forum.crossout.ru"), domain("forum.crossout.net"){
-  
-/*красный крестик*/
+
+  /*красный крестик*/
   /*для окошка "+х новых сообщений в теме"*/
   #elFlashMessage.ipsFlashMsg_dismissable [data-action="dismissFlashMessage"],
   /*для окна предпросмотра темы*/
@@ -15,16 +15,16 @@
   html[dir="ltr"] .ipsReact_unreact
   {
     background: none repeat scroll 0% 0% #B11414;
-}
+  }
   /*в окне просмотра изображения*/
   .ipsLightbox_close
-  {  
+  {
     font-size: 51px;
     line-height: 30px;
     background: none repeat scroll 0% 0% #B90606;
     border-radius: 5px;
-}  
-  /*в диалоговом окне настроек и пр*/  
+  }
+  /*в диалоговом окне настроек и пр*/
   .ipsDialog_close
   {
     width: 40px;
@@ -35,23 +35,23 @@
     background: none repeat scroll 0% 0% #B90606;
     border-radius: 0px;
   }
-	/*в опросе. кнопка удалить вариант ответа*/
-	.cPollChoices > li > div > .ipsButton_narrow {
-		background: none repeat scroll 0% 0% #B11414 !important;
-		color: #EEE;
-		border: none;
-	}
+  /*в опросе. кнопка удалить вариант ответа*/
+  .cPollChoices > li > div > .ipsButton_narrow {
+    background: none repeat scroll 0% 0% #B11414 !important;
+    color: #EEE;
+    border: none;
+  }
 
   /*Затемнение картинок*/
   img {filter: brightness(0.8); transition: 0.25s;} /*до наведения*/
   img:hover {filter: brightness(1);} /*после наведения*/
 
-	/*скрыть лычки*/
-	.gaijin-medals{
-		display:none;
-	}
+  /*скрыть лычки*/
+  .gaijin-medals{
+    display:none;
+  }
 
- /*зафиксированная пользовательская панель*/
+  /*зафиксированная пользовательская панель*/
   #elUserNav {
     background-color: #666 !important;
     border-radius: 0px 0px 20px 20px;
@@ -59,23 +59,23 @@
     position: fixed;
     z-index: 6000;
     top: -3px !important;
-}
- /*счётчик писем и уведомлений опущены вниз*/
+  }
+  /*счётчик писем и уведомлений опущены вниз*/
   html[dir="ltr"] .ipsApp .ipsNotificationCount {
     right: -12px;
     top: 10px;
-}
-  
-  /*широкое поле доп. сообщения от админа под сообщением*/  
+  }
+
+  /*широкое поле доп. сообщения от админа под сообщением*/
   .post-note {
     border: none;
     margin: 5px 0px;
     max-width: 100%;
-}
+  }
   /*жёлтый фон заметки от админа*/
   .post-note.pn-type-3 {
     background-color: #FFFAC9;
-}
+  }
 
   /*зелёный фон сообщения адаптирован для тёмной темы*/
   .ipsComment_highlighted:not(.ipsBox_transparent):not(.ipsModerated):not(.ipsComment_selected):not(.ipsComment_popular),
@@ -84,62 +84,66 @@
     background: none repeat scroll 0% 0% #152D14;
     border: 0px !important;
     box-shadow: 0 0 10px #03c10b;
-  }   
+  }
 
   /*Оранжевый фон сообщения адаптирован для тёмной темы*/
-  form > .gaijin-important-post + article {   
+  form > .gaijin-important-post + article {
     background: none repeat scroll 0% 0% #482C12 !important;
     box-shadow: 0 0 10px #cf5200 !important;
   }
-  
+
   /*уменьшен размер шрифта ника*/
   .ipsType_sectionHead {
     font-size: 16px;
   }
   /*разделитель непрочитанных сообщения*/
   .ipsCommentUnreadSeperator,
-  /*новые сообщения в активности*/		
+  /*новые сообщения в активности*/
   html[dir="ltr"] .ipsStreamItem_bar hr.ipsHr {
     margin: 6px 0px;
     border-width: 4px 0px 0px;
     border-style: dashed;
     border-color: #C5794D/*417BA3*/;
-}
+  }
 
 
-/*отключение анимации лайков*/
-	.ipsReact_button a {
-		transition: unset;
-	}
-	.ipsReact_button {
-		transition: unset; 
-		transition-delay: unset; 
-	}
-	.ipsReact .ipsReact_types ul.ipsReact_hover {
-		animation:  reaction-hover 0.0s ease-in-out forwards;
-	}
-	.ipsReact .ipsReact_types ul.ipsReact_hoverOut{
-		animation:reaction-hover-out 0s ease-in-out 0s forwards;
-	}
-/*************/
+  /*отключение анимации лайков*/
+  .ipsReact_button a {
+    transition: unset;
+  }
+  .ipsReact_button {
+    transition: unset;
+    transition-delay: unset;
+  }
+  .ipsReact .ipsReact_types ul.ipsReact_hover {
+    animation:  reaction-hover 0.0s ease-in-out forwards;
+  }
+  .ipsReact .ipsReact_types ul.ipsReact_hoverOut{
+    animation:reaction-hover-out 0s ease-in-out 0s forwards;
+  }
+  /*************/
 
-/*крестик поверх картинки в окне просмотра изображения*/
+  /*крестик поверх картинки в окне просмотра изображения*/
   .ipsLightbox_close
-  {  
+  {
     z-index: 1000 !important;
-}  
+  }
 
   /*администрация. равная высота карточки*/
   .cStaffDirectory .ipsGrid > [class*="ipsGrid_span"] {
     min-height: 90px;
   }
 
-/*аватарки в карточках при поиске пользователей*/
-.cStream_members .ipsUserPhoto {
+  /*аватарки в карточках при поиске пользователей*/
+  .cStream_members .ipsUserPhoto {
     margin-top: -5px;
-}
+  }
+  /*удаление фона под картинками с альфа каналом.*/
+  .ipsUserPhoto {
+    background: none repeat scroll 0% 0% transparent;
+  }
 
-/*квадратные аватарки*/
+  /*квадратные аватарки*/
   .ipsUserPhoto > img,
   .ipsUserPhoto_tiny > img,
   .ipsUserPhoto_tiny img,
@@ -161,27 +165,22 @@
   .cShareLink
   {border-radius: 2px !important;}
 
-  /*удаление фона под картинками с альфа каналом.*/
-.ipsUserPhoto {
-  background: none repeat scroll 0% 0% rgba(0,0,0,0) !important;
-}
-
   /*ширина картинки (кроме gif) в сообщениях ограничена 200px*/
   .ipsPad > .ipsContained img:not([src*=".gif"]){
     max-width: 200px !important;
     height: auto !important;
-  }     
-  
-/*уменьшение интервалов*/
-  
-    /*reduce interval in Subforums*/
+  }
+
+  /*уменьшение интервалов*/
+
+  /*reduce interval in Subforums*/
   .ipsDataList_large .ipsDataItem_main,
   .ipsDataList_large .ipsDataItem_stats,
   .ipsDataList_large .ipsDataItem_lastPoster,
   .ipsDataList_large .ipsDataItem_generic {
     padding: 1px 10px;
   }
-  
+
   .ipsDataList_large .ipsDataItem_icon
   {
     padding: 10px 10px;
@@ -196,41 +195,41 @@
   .ipsDataItem_icon {
     padding: 4px 10px;
   }
-  
+
   /*reduce interval unedr home*/
   .ipsPageHeader  {
     margin: 0px 0px;
   }
-  
+
   .ipsBreadcrumb.ipsBreadcrumb_top{
     padding: 5px 0px;
     margin: 0px 20px 5px;
   }
-  
-   /*reduce interval unedr Subforums name*/
+
+  /*reduce interval unedr Subforums name*/
   .ipsApp .ipsSpacer_bottom/*,
   .ipsApp .ipsSpacer_both*/
   {
     margin-bottom: 3px;
   }
-  
-   /*reduce interval upper Subforums name*/
+
+  /*reduce interval upper Subforums name*/
   .ipsType_pageTitle  {
     line-height: 1;
   }
-  
+
   /*название категории*/
   .ipsType_sectionTitle,
   /*"важные сообщения..."*/
   .ipsWidget.ipsWidget_vertical .ipsWidget_title {
     padding: 5px 15px;
   }
-  
+
   /*темы с списке "важные сообщения..." на главной*/
   .ipsPad_half {
     padding: 0px 5px 0px 0px;
   }
-  
+
   /*вериткальный отступ названия темы от аватарки в "важные сообщения..."*/
   .ipsDataList.ipsDataList_reducedSpacing .ipsDataItem_main,
   .ipsDataList.ipsDataList_reducedSpacing .ipsDataItem_stats,
@@ -238,7 +237,7 @@
   .ipsDataList.ipsDataList_reducedSpacing .ipsDataItem_generic {
     padding: 2px 0px;
   }
-  
+
   /*счётчик коментов из списка "важные сообщения..." чуть опущен*/
   html[dir="ltr"] .ipsCommentCount {
     margin-top: 5px;
@@ -248,7 +247,7 @@
   html[dir="ltr"] .ipsDataItem_icon {
     padding-left: 5px;
   }
-  
+
   /*сдвигаем счётчик "популярных/последних тем" влево...*/
   html[dir="ltr"] .ipsWidget .ipsDataItem_main.cWidgetComments .ipsCommentCount {
     margin-right: -55px;
@@ -257,8 +256,8 @@
   .ipsWidget.ipsWidget_vertical .ipsWidget_inner  {
     padding-right: 1px !important;
   }
-  
-/*необходимые восстановления из-за наследия от предыдущих правок...*/
+
+  /*необходимые восстановления из-за наследия от предыдущих правок...*/
   /*расширение панели выбора страницы*/
   .ipsButtonBar {
     padding: 2px 0px 3px 3px;
@@ -277,24 +276,24 @@
   }
   /*сообщение о новых коментариях. текст по центру*/
   #elFlashMessage.cPostFlash {
-      line-height: 45px;
+    line-height: 45px;
   }
   /*аватарка автора сообщения в ЛС. увеличена полоса*/
   .ipsComment:not(.ipsModerated) .ipsComment_header {
-      padding-bottom: 10px;
+    padding-bottom: 10px;
   }
 
-  
-   /*рамка вокруг сообщения*/
+
+  /*рамка вокруг сообщения*/
   .ipsPad, .ipsApp ul.ipsPad, .ipsApp ol.ipsPad {
     padding: 4px 5px 5px 15px;
   }
-  
-/*reduce intervals in PM*/
+
+  /*reduce intervals in PM*/
   .ipsComment_header {
     padding: 2px;
   }
-  
+
   .cAuthorPane{
     padding-top: 4px !important;
     padding-bottom: 4px !important;
@@ -305,132 +304,132 @@
   .cAuthorPane_photo {
     margin: 0px 0px;
   }
-  
+
   .cPost .ipsComment_meta,
   .cPost .cPost_contentWrap{
     padding-top: 4px;
     padding-bottom: 4px;
   }
-  
+
   .ipsComment,
   .ipsComment [data-role="commentContent"]{
     margin-bottom: 4px;
   }
-  
+
   hr.ipsHr{
     border-style: dashed;
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  
+
   .ipsComment_controls {
     margin: 0px;
   }
 
-/*Тёмная тема для FireFox*/
+  /*Тёмная тема для FireFox*/
 
   /*эффект выделения текста в firefox*/
   ::-moz-selection {
-    background: #494949; 
+    background: #494949;
     color:#CCC;
   }
 
-/*Тёмная тема*/
+  /*Тёмная тема*/
 
-/*основной цвет текста*/
-body, a{
-color: #CCC;
-}
-	/*фон стрницы*/	
-	#ipsLayout_body {
-		background-color: #000 !important;
-	}	
-	body{
-		background-color: #000;
-	}
+  /*основной цвет текста*/
+  body, a{
+    color: #CCC;
+  }
+  /*фон стрницы*/
+  #ipsLayout_body {
+    background-color: #000 !important;
+  }
+  body{
+    background-color: #000;
+  }
 
   /*картинка в шапке темнее*/
   #ipsLayout_header header {
     background-image: url('https://puu.sh/s9zzP/ba8598d160.png');
   }
 
-.ipsAreaBackground_reset,
-	.ipsBox:not(.ipsBox_transparent):not(.ipsModerated){
-		background: none repeat scroll 0% 0% #1B1B1B;
-	}
+  .ipsAreaBackground_reset,
+  .ipsBox:not(.ipsBox_transparent):not(.ipsModerated){
+    background: none repeat scroll 0% 0% #1B1B1B;
+  }
 
   /*все текстовые/выпадающие поля ввода*/
   input:not(#elSearchField), textarea, select,
-    /*поиск по автору/тэгам*/
-    .ipsField_autocomplete,
-    /*галочки*/
-    .ipsCustomInput > span {
-      background: #222 !important;
-      color: #DDD !important;
-    }
-  
+  /*поиск по автору/тэгам*/
+  .ipsField_autocomplete,
+  /*галочки*/
+  .ipsCustomInput > span {
+    background: #222 !important;
+    color: #DDD !important;
+  }
 
-/*управление комментарием (изменить, цитировать), цвет ссылок, жалоба*/
-li a,
-.ipsAttachLink,
-.ipsResponsive_inline{
-color: #CCC;
-}
- 
-/* Main background */
-#ipsLayout_contentWrapper {
-	background-color: #111;
-}
 
-/* Footer */
-#ipsLayout_footer a,
-#ipsLayout_footer p {
-	color: #fff;
-}
+  /*управление комментарием (изменить, цитировать), цвет ссылок, жалоба*/
+  li a,
+  .ipsAttachLink,
+  .ipsResponsive_inline{
+    color: #CCC;
+  }
 
-/* Background for some content sections */
-.ipsBox:not( .ipsBox_transparent ):not( .ipsModerated ),
-.ipsTabs_panel {
-	background: #1b1b1b;
-}
-	.ipsTabs_activeItem {
-	background: #1B1B1B;
-}
+  /* Main background */
+  #ipsLayout_contentWrapper {
+    background-color: #111;
+  }
 
-	.ipsTabs_activeItem {
-		color: #EEE;
-	}
-	.ipsTabs_activeItem:hover{
-	color:#fff;
-}
+  /* Footer */
+  #ipsLayout_footer a,
+  #ipsLayout_footer p {
+    color: #fff;
+  }
 
-		/*нечётная полоса, фон сообщения*/
-	/*зависит от браузера*/
-	
-	
-	/*подложка сообщений*/
-	.ipsAreaBackground_light,
-	.ipsAreaBackground {
-		background: none repeat scroll 0% 0% #2D2D2D !important;
-	}
-	
-	
-	.cMessage_active {
+  /* Background for some content sections */
+  .ipsBox:not( .ipsBox_transparent ):not( .ipsModerated ),
+  .ipsTabs_panel {
+    background: #1b1b1b;
+  }
+  .ipsTabs_activeItem {
+    background: #1B1B1B;
+  }
+
+  .ipsTabs_activeItem {
+    color: #EEE;
+  }
+  .ipsTabs_activeItem:hover{
+    color:#fff;
+  }
+
+  /*нечётная полоса, фон сообщения*/
+  /*зависит от браузера*/
+
+
+  /*подложка сообщений*/
+  .ipsAreaBackground_light,
+  .ipsAreaBackground {
+    background: none repeat scroll 0% 0% #2D2D2D !important;
+  }
+
+
+  .cMessage_active {
     background: none repeat scroll 0% 0% rgba(255, 108, 0, 0.3) !important;
     position: relative;
-}
+  }
 
   /*рамки вокруг блоков*/
-.ipsBox {
+  .ipsBox {
     border-width: 1px;
     border-style: solid;
     border-color: #323232;
     border-radius: 3px;
-}
+  }
 
   /*исправляет скопированный чёрный текст и белый фон*/
   /* в сообщениях */
-  
+
   strong[style*='background-color:rgb(255,255,255)'],
   strong[style*='background-color:rgb(251,251,251)'],
   span[style*="background-color:rgb(255,255,255)"], /*белый фон*/
@@ -468,6 +467,9 @@ color: #CCC;
   span[style*='background-color:#ffffff'],
   span[style*='background-color:#fff0f5'],
   span[style*='background-color:#e6e6fa'],
+  p[style*="background-color:#ffffff"],
+  strong[style*="background-color:#ffffff"],
+  sup[style*="background-color:#ffffff"],
 
   /*С ПРОБЕЛАМИ!*/
   span[style*="color: rgb(0, 0, 0)"],
@@ -502,14 +504,14 @@ color: #CCC;
   span[style*='color:rgb(40,40,40)'],
   span[style*="color:rgb(39,42,52)"],
   span[style*="color:#525252"],
-  span[style*="color:#444444"], 
+  span[style*="color:#444444"],
   span[style*="color:#333333"],
   span[style*="color:#2b2e2f"],
   span[style*="color:#282828"],
   span[style*="color:#222222"],
   span[style*="color:#111111"],
-  p[style*='color:#000000'], /*копи-паста из письма*/	 
-  p[style*="color:#272a34"], 
+  p[style*='color:#000000'], /*копи-паста из письма*/
+  p[style*="color:#272a34"],
   p[style*="color:#282828"],
   p[style*="color:#333"],
   p[style*="color:rgb(39,42,52)"],
@@ -517,7 +519,7 @@ color: #CCC;
   h3[style*='color:#000000'],
   h4[style*="color:#272a34"],
   h2[style*="color:#333333"],
-  strong[style*="color:#272a34"], 
+  strong[style*="color:#272a34"],
   strong[style*="background-color:rgb(245,245,245)"],
   strong[style*="background-color:rgb(250,250,250)"],
   strong[style*="color:rgb(39,42,52)"],
@@ -541,11 +543,11 @@ color: #CCC;
   ol[style*="color:#272a34"],
   b[style*="color:#333333"],
   b[style*="color:#272a34"],
-  b[style*="color:#222222"],	
+  b[style*="color:#222222"],
   i[style*="color:#222222"],
   em[style*="color:rgb(39,42,52)"],
 
-  b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"], 
+  b[style*="background-color:rgb(250,250,250)"], span[style*="color:rgb(0,0,0)"],
   div[style*='color:rgb(39,42,52)'],
   div[style*="color:rgb(0,0,0)"], /*стихи из форумной игры - Замочная скважина*/
   div[style*="background-color:rgb(187,218,185)"], /*выползающий table*/
@@ -555,128 +557,127 @@ color: #CCC;
   { color: #909090!important; background-color: transparent!important; }
 
 
-	/*зелёный*/
-span[style*='background-color:rgb(228,239,228)']{
-color: #CCC !important ; background-color: rgba(109, 197, 109, 0.6) !important}
-	/*красный*/
-span[style*='background-color:rgb(255,216,216)']{
-color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
+  /*зелёный*/
+  span[style*='background-color:rgb(228,239,228)']{
+    color: #CCC !important ; background-color: rgba(109, 197, 109, 0.6) !important}
+  /*красный*/
+  span[style*='background-color:rgb(255,216,216)']{
+    color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
 
- /*фон уведомлений*/
+  /*фон уведомлений*/
   .ipsDataList_readStatus .ipsDataItem:not(.ipsDataItem_unread):not(.ipsDataItem_selected):not(.ipsModerated) {
     background: none repeat scroll 0% 0% #101010 !important;
-}
-	
-	
-	/*полоска фильтров в активности*/
-.cStreamFilter {
+  }
+
+
+  /*полоска фильтров в активности*/
+  .cStreamFilter {
     background: none repeat scroll 0% 0% #444 !important;
     box-shadow: 0 0 10px #444;
-}
+  }
 
-.cStreamFilter h3 {
+  .cStreamFilter h3 {
     color: #ddd;
-}
+  }
 
-.cStreamFilter a {
+  .cStreamFilter a {
     color: #fff;
-}
+  }
 
-/*кнопки отображения активности*/
-	/*режим отображения сообщений в активности. активная кнопка*/
-	.ipsApp .ipsButton_primary {
-		border: 0px;
-		background-color: #111;
-		color: #CCC;
-		text-decoration: underline !important;
-	}
-	/*режим отображения сообщений в активности. неактивная кнопка*/
-	html[dir] .ipsButton_split > .ipsButton.ipsButton_link,
-	html[dir] .ipsButton_split > li > .ipsButton.ipsButton_link{
-		border: 1px solid #555;		
-		background-color: #333;
-		color: #EEE;
-	}
+  /*кнопки отображения активности*/
+  /*режим отображения сообщений в активности. активная кнопка*/
+  .ipsApp .ipsButton_primary {
+    border: 0px;
+    background-color: #111;
+    color: #CCC;
+  }
+  /*режим отображения сообщений в активности. неактивная кнопка*/
+  html[dir] .ipsButton_split > .ipsButton.ipsButton_link,
+  html[dir] .ipsButton_split > li > .ipsButton.ipsButton_link{
+    border: 1px solid #555;
+    background-color: #333;
+    color: #EEE;
+  }
 
-	/*при наведении на активную кнопку нет эффекта*/
-	.ipsApp .ipsButton:hover:not(.ipsButton_noHover){
-		background-image: none;
-	}
-	/*наведение на неактивную кнопку*/
-	.ipsApp .ipsButton:hover:not(.ipsButton_primary){
-		background-color: #222 !important;
-		border: 1px solid #333 !important;
-	}
-	/*поиск по автору*/
-	.ipsAutocompleteMenu_item {
+  /*при наведении на активную кнопку нет эффекта*/
+  .ipsApp .ipsButton:hover:not(.ipsButton_noHover){
+    background-image: none;
+  }
+  /*наведение на неактивную кнопку*/
+  .ipsApp .ipsButton:hover:not(.ipsButton_primary){
+    background-color: #222 !important;
+    border: 1px solid #333 !important;
+  }
+  /*поиск по автору*/
+  .ipsAutocompleteMenu_item {
     background: none repeat scroll 0% 0% #1E1E1E;
     color: #FFF;
-	}
-	.ipsAutocompleteMenu_item[data-selected] {
+  }
+  .ipsAutocompleteMenu_item[data-selected] {
     background: none repeat scroll 0% 0% #000;
-	}
-	
-	/*выбор даты по календарю*/
-	.ui-datepicker {
+  }
+
+  /*выбор даты по календарю*/
+  .ui-datepicker {
     background: none repeat scroll 0% 0% #333;
-	}
-	.ui-datepicker th {
+  }
+  .ui-datepicker th {
     background: none repeat scroll 0% 0% #000;
-}
-	.ui-datepicker-today {
+  }
+  .ui-datepicker-today {
     background-color: #5C5C5C;
-}
-	.ui-datepicker td a:hover, .ui-datepicker-current-day {
+  }
+  .ui-datepicker td a:hover, .ui-datepicker-current-day {
     background-color: #000;
-}
+  }
 
-	
-	/* Area backgrounds and data lists */
-	/*чётная полоса*/
-.ipsDataList.ipsDataList_zebra .ipsDataItem:not( .ipsDataItem_selected ):not( .ipsModerated ):not( .ipsDataItem_new ):not( .ipsDataItem_success ):not( .ipsDataItem_warning ):not( .ipsDataItem_error ):not( .ipsDataItem_info ):not( .ipsDataItem_status ):nth-child(even) {
-	background: #292929 !important;
-	}
-	
-.ipsDataItem {
-	border-color: rgba(255,255,255,0.1);
-}
 
-/* Font colors that need resetting */
-.ipsType_pageTitle {
-	color: #ddd;
-}
+  /* Area backgrounds and data lists */
+  /*чётная полоса*/
+  .ipsDataList.ipsDataList_zebra .ipsDataItem:not( .ipsDataItem_selected ):not( .ipsModerated ):not( .ipsDataItem_new ):not( .ipsDataItem_success ):not( .ipsDataItem_warning ):not( .ipsDataItem_error ):not( .ipsDataItem_info ):not( .ipsDataItem_status ):nth-child(even) {
+    background: #292929 !important;
+  }
 
-/*выделение заголовка своей темы, для редактирования*/
-.ipsType_pageTitle [data-role="editableTitle"]:hover{
-		background: #676767;
-	}
+  .ipsDataItem {
+    border-color: rgba(255,255,255,0.1);
+  }
 
-/*заголовок в теме "х сообщений в этой теме"*/
+  /* Font colors that need resetting */
+  .ipsType_pageTitle {
+    color: #ddd;
+  }
+
+  /*выделение заголовка своей темы, для редактирования*/
+  .ipsType_pageTitle [data-role="editableTitle"]:hover{
+    background: #676767;
+  }
+
+  /*заголовок в теме "х сообщений в этой теме"*/
   .ipsType_sectionTitle{
     color: #eee;
   }
-  
+
   /*название категорий в шапках*/
   a.ipsType_sectionTitle, .ipsType_sectionTitle a {
     color: #eee;
   }
-	
-/*фон шапок правой колонки на главной странице*/  
-.ipsWidget.ipsWidget_vertical .ipsWidget_title {
+
+  /*фон шапок правой колонки на главной странице*/
+  .ipsWidget.ipsWidget_vertical .ipsWidget_title {
     color: #eee;
     background: none repeat scroll 0% 0% #41270d;
-}
+  }
 
-	/*градиент в шапках категорий*/
-	h2.ipsType_sectionTitle,
-	/*счётчик результатов поиска*/
-	.ipsType_sectionTitle{
-		background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent !important;
-	}
-	/*полоса под номерами страниц*/
-	.ipsButtonBar {
-		background: none repeat scroll 0% 0% #3C1500 !important;
-	}
+  /*градиент в шапках категорий*/
+  h2.ipsType_sectionTitle,
+  /*счётчик результатов поиска*/
+  .ipsType_sectionTitle{
+    background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent !important;
+  }
+  /*полоса под номерами страниц*/
+  .ipsButtonBar {
+    background: none repeat scroll 0% 0% #3C1500 !important;
+  }
   /*большая иконка непрочитанного сообщения*/
   .ipsItemStatus.ipsItemStatus_large {
     background: none repeat scroll 0% 0% #7D441E;
@@ -716,7 +717,7 @@ color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
     color: #999 !important;
   }
 
-/* Reset nav areas for correct coloring */
+  /* Reset nav areas for correct coloring */
 
   /*нижняя шапка с вкладками. создание новой темы. about me*/
   .ipsTabs{
@@ -724,95 +725,95 @@ color: #CCC !important ; background-color: rgba(255, 97, 97, 0.6) !important}
     border-top: none;
   }
 
-	/*верхняя шапка с вкладками*/
-.ipsLayout_container > .ipsNavBar_primary{
-		background: rgba(50,50,50,.5);
-	}
-	
-	.ipsNavBar_secondary,
-	.ipsNavBar_primary:not( .ipsNavBar_noSubBars ) > ul:before{
+  /*верхняя шапка с вкладками*/
+  .ipsLayout_container > .ipsNavBar_primary{
+    background: rgba(50,50,50,.5);
+  }
+
+  .ipsNavBar_secondary,
+  .ipsNavBar_primary:not( .ipsNavBar_noSubBars ) > ul:before{
     background: none repeat scroll 0% 0% #663300 !important;
-	}
-	
-	
-	.ipsNavBar_secondary > li > a 
-	{color: #CCC;}
-	
-	.ipsNavBar_secondary > li > a:hover{
-	border-color:rgba(255,255,255,0.3);
-	color:#FFF;
-}
-	
-.ipsNavBar_primary > ul > li > a {
-	background: none repeat scroll 0% 0% rgba(102,51,0,0.2)/*rgba(192, 95, 0, 0.6)*/;
-}
-	.ipsNavBar_primary > ul > li > a:hover {
-		background: rgba(102,51,0,0.5);
-	}
-	
-.ipsNavBar_primary > ul > li.ipsNavBar_active > a {
-	background: #663300;
-	color: #CCC;
-}
-	
-	.ipsNavBar_secondary > li.ipsNavBar_active a{
-	border-color: #CCC;
-	background: #8D5116;
-	color: #CCC;
-}
+  }
 
-.ipsBreadcrumb > ul > li {
-	color: #999;
-}
 
- /*информационная полоса в опросе, о том что голосование НЕ анонимное*/
+  .ipsNavBar_secondary > li > a
+  {color: #CCC;}
+
+  .ipsNavBar_secondary > li > a:hover{
+    border-color:rgba(255,255,255,0.3);
+    color:#FFF;
+  }
+
+  .ipsNavBar_primary > ul > li > a {
+    background: none repeat scroll 0% 0% rgba(102,51,0,0.2)/*rgba(192, 95, 0, 0.6)*/;
+  }
+  .ipsNavBar_primary > ul > li > a:hover {
+    background: rgba(102,51,0,0.5);
+  }
+
+  .ipsNavBar_primary > ul > li.ipsNavBar_active > a {
+    background: #663300;
+    color: #CCC;
+  }
+
+  .ipsNavBar_secondary > li.ipsNavBar_active a{
+    border-color: #CCC;
+    background: #8D5116;
+    color: #CCC;
+  }
+
+  .ipsBreadcrumb > ul > li {
+    color: #999;
+  }
+
+  /*информационная полоса в опросе, о том что голосование НЕ анонимное*/
   .ipsMessage_info, .ipsMessage_information {
     background: none repeat scroll 0% 0% #404040;
-}
+  }
 
-/*голосование*/
-/*фоновая шкала*/
-.cPollVoteBar {
+  /*голосование*/
+  /*фоновая шкала*/
+  .cPollVoteBar {
     background: #282828;
-}
+  }
 
-/*текст на ней*/
-.cPollVoteBar > span:after {
+  /*текст на ней*/
+  .cPollVoteBar > span:after {
     color: #CCC;
-}
+  }
 
-/*цифры на заполненной шкале*/
-.cPollVoteBar > span.cPollVoteBar_inside:after {
+  /*цифры на заполненной шкале*/
+  .cPollVoteBar > span.cPollVoteBar_inside:after {
     color: #eee;
-}
-  
+  }
+
   /*стрелка > в статусе профиля. username1 > username2 +comment */
   .ipsStreamItem_title {
     color: #eee;
   }
 
-/* Menu stuff that needs changing */
-.ipsSideMenu_itemActive a,
-a.ipsSideMenu_itemActive,
-.ipsSideMenu_withChecks .ipsSideMenu_item > input[type="checkbox"]:checked ~ a,
-.ipsSideMenu_withRadios .ipsSideMenu_item > input[type="radio"]:checked ~ a {
-	background: #222;
-}
+  /* Menu stuff that needs changing */
+  .ipsSideMenu_itemActive a,
+  a.ipsSideMenu_itemActive,
+  .ipsSideMenu_withChecks .ipsSideMenu_item > input[type="checkbox"]:checked ~ a,
+  .ipsSideMenu_withRadios .ipsSideMenu_item > input[type="radio"]:checked ~ a {
+    background: #222;
+  }
 
-.ipsSideMenu_item:not( .ipsSideMenu_itemActive ) a:hover,
-a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
-	background: rgba(255,255,255,0.03) !important;
-}
+  .ipsSideMenu_item:not( .ipsSideMenu_itemActive ) a:hover,
+  a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
+    background: rgba(255,255,255,0.03) !important;
+  }
 
-/*боковое меню в настройках*/
-.ipsSideMenu_subTitle {
-	text-transform: uppercase;
-	color: #868686;
-	font-size: 12px;
-  padding: 4px 5px;
-  background-color: #292929;
-}
-  
+  /*боковое меню в настройках*/
+  .ipsSideMenu_subTitle {
+    text-transform: uppercase;
+    color: #868686;
+    font-size: 12px;
+    padding: 4px 5px;
+    background-color: #292929;
+  }
+
   .ipsSideMenu_item a, a.ipsSideMenu_item {
     padding: 5px 10px;
     margin-bottom: 0px;
@@ -823,50 +824,50 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   }
 
 
-.ipsSideMenu_withChecks .ipsSideMenu_item:not( .ipsSideMenu_itemActive ) a:after,
-.ipsSideMenu_withChecks a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):after,
-.ipsSideMenu_withRadios .ipsSideMenu_item:not( .ipsSideMenu_itemActive ) a:after,
-.ipsSideMenu_withRadios a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):after {
-	color: rgba(255,255,255,0.15);
-}
+  .ipsSideMenu_withChecks .ipsSideMenu_item:not( .ipsSideMenu_itemActive ) a:after,
+  .ipsSideMenu_withChecks a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):after,
+  .ipsSideMenu_withRadios .ipsSideMenu_item:not( .ipsSideMenu_itemActive ) a:after,
+  .ipsSideMenu_withRadios a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):after {
+    color: rgba(255,255,255,0.15);
+  }
 
-/* Forms */
-	.ipsApp .ipsField_autocomplete,
-	.ipsApp textarea,
-	.ipsApp input[type="text"],
-	.ipsApp input[type="password"],
-	.ipsApp input[type="datetime"],
-	.ipsApp input[type="datetime-local"],
-	.ipsApp input[type="date"],
-	.ipsApp input[type="month"],
-	.ipsApp input[type="time"],
-	.ipsApp input[type="week"],
-	.ipsApp input[type="number"],
-	.ipsApp input[type="email"],
-	.ipsApp input[type="url"],
-	.ipsApp input[type="search"],
-	.ipsApp input[type="tel"]/*,
-	.ipsApp select:not( [multiple] )*/ {
-		border-color: #484848 #555 #585858 #555;
-		color:#333;
-	}
+  /* Forms */
+  .ipsApp .ipsField_autocomplete,
+  .ipsApp textarea,
+  .ipsApp input[type="text"],
+  .ipsApp input[type="password"],
+  .ipsApp input[type="datetime"],
+  .ipsApp input[type="datetime-local"],
+  .ipsApp input[type="date"],
+  .ipsApp input[type="month"],
+  .ipsApp input[type="time"],
+  .ipsApp input[type="week"],
+  .ipsApp input[type="number"],
+  .ipsApp input[type="email"],
+  .ipsApp input[type="url"],
+  .ipsApp input[type="search"],
+  .ipsApp input[type="tel"]/*,
+  .ipsApp select:not( [multiple] )*/ {
+    border-color: #484848 #555 #585858 #555;
+    color:#333;
+  }
 
- /*стрелка выпадающего списка. "другая" сортировка тем в разделе*/
-	.ipsApp select:not([multiple]){
-		background-image: url("https://forum.crossout.ru/uploads/set_resources_5/84c1e40ea0e759e3f1505eb1788ddf3c_select_dropdown.png"), linear-gradient(to bottom, #393939 0%, #232323 100%) !important;
-		background-position: right center !important;
-		background-size: 18px 9px, 100% 100% !important;
-		background-repeat: no-repeat !important;
-		border: 1px solid #555 !important;
-		min-width: 330px;
-	}
-/*эффект при наведении курсора*/
-	.ipsApp select:not([multiple]):hover{
-		background-image: url("https://forum.crossout.ru/uploads/set_resources_5/84c1e40ea0e759e3f1505eb1788ddf3c_select_dropdown.png"), linear-gradient(to bottom, #333 0%, #222 100%) !important;
-	}
+  /*стрелка выпадающего списка. "другая" сортировка тем в разделе*/
+  .ipsApp select:not([multiple]){
+    background-image: url("https://forum.crossout.ru/uploads/set_resources_5/84c1e40ea0e759e3f1505eb1788ddf3c_select_dropdown.png"), linear-gradient(to bottom, #393939 0%, #232323 100%) !important;
+    background-position: right center !important;
+    background-size: 18px 9px, 100% 100% !important;
+    background-repeat: no-repeat !important;
+    border: 1px solid #555 !important;
+    min-width: 330px;
+  }
+  /*эффект при наведении курсора*/
+  .ipsApp select:not([multiple]):hover{
+    background-image: url("https://forum.crossout.ru/uploads/set_resources_5/84c1e40ea0e759e3f1505eb1788ddf3c_select_dropdown.png"), linear-gradient(to bottom, #333 0%, #222 100%) !important;
+  }
 
-/*фон лайков если их 0*/
-  .ipsPos_right > .ipsReputation_count{    
+  /*фон лайков если их 0*/
+  .ipsPos_right > .ipsReputation_count{
     background: none repeat scroll 0% 0% #222;
   }
   /*фон лайков если их больше 0*/
@@ -876,37 +877,37 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   /*цвет счётчика лайков*/
   .ipsPos_right > .ipsType_positive {
     color: #EEE; /*#D43B2D;*/
-}
+  }
 
-	/* фон счетчика лайков/хаха/вверх/жалко/не понял/благодарю*/
-	.ipsReact_reactCount{
-		background-color: #868686;
-	}
-	/* серая полоска между счетчиком лайков и кнопкой*/
-	html[dir="ltr"] .ipsReact_blurb:not(.ipsHide) + .ipsReact_types{
-		border-left: 1px solid #323232;
-	}
+  /* фон счетчика лайков/хаха/вверх/жалко/не понял/благодарю*/
+  .ipsReact_reactCount{
+    background-color: #868686;
+  }
+  /* серая полоска между счетчиком лайков и кнопкой*/
+  html[dir="ltr"] .ipsReact_blurb:not(.ipsHide) + .ipsReact_types{
+    border-left: 1px solid #323232;
+  }
 
-	/*рамка вокруг кнопки открывающей список "эмоций"*/
-	body.ipsApp_noTouch .ipsReact_types:hover .ipsReact_button,
-	body:not(.ipsApp_noTouch) .ipsReact_types.ipsReact_types_active .ipsReact_button {
-		border: none;
-		background: #494949;
-		box-shadow: none;
-		transform: none;
-	}
-	/*убрана рамка вокруг неактивной кнопки*/
-	.ipsReact_button{
-		border: none;
-	}
-	/*убран отступ под счетчиком лайков*/
-	.ipsReact_reactions + .ipsReact_overview {
-		margin-top: 0px;
-	}
-	/*подсказка над "эмоцией"*/
-	.ipsTooltip.ipsTooltip_top {
-		margin-top: -8px;
-	}
+  /*рамка вокруг кнопки открывающей список "эмоций"*/
+  body.ipsApp_noTouch .ipsReact_types:hover .ipsReact_button,
+  body:not(.ipsApp_noTouch) .ipsReact_types.ipsReact_types_active .ipsReact_button {
+    border: none;
+    background: #494949;
+    box-shadow: none;
+    transform: none;
+  }
+  /*убрана рамка вокруг неактивной кнопки*/
+  .ipsReact_button{
+    border: none;
+  }
+  /*убран отступ под счетчиком лайков*/
+  .ipsReact_reactions + .ipsReact_overview {
+    margin-top: 0px;
+  }
+  /*подсказка над "эмоцией"*/
+  .ipsTooltip.ipsTooltip_top {
+    margin-top: -8px;
+  }
 
   /*новая кнопка лайков*/
   .ipsReact_button a{
@@ -926,25 +927,25 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     background: none repeat scroll 0% 0% #555;
   }
 
-	/*ярлык популярного сообщения*/
-	.ipsComment.ipsComment_popular .ipsComment_popularFlag {
-		top: -1px;
-		z-index: 2000;
-		color: #eee;
-		background: #8D5116;
-		height: 54px;
-		padding-top: 27px;
-	}
-	/*нижний уголок ярлыка*/
-	.ipsComment.ipsComment_popular .ipsComment_popularFlag::after {
-		border-color: #8D5116 transparent transparent transparent;
-	}
-	/*рамка вокруг "популярного сообщения" - одноцветная */
-	.ipsComment.ipsBox.ipsComment_popular:not(.ipsModerated):not(.ipsComment_selected){
-		border-color: #8D5116;
-	}
+  /*ярлык популярного сообщения*/
+  .ipsComment.ipsComment_popular .ipsComment_popularFlag {
+    top: -1px;
+    z-index: 2000;
+    color: #eee;
+    background: #8D5116;
+    height: 54px;
+    padding-top: 27px;
+  }
+  /*нижний уголок ярлыка*/
+  .ipsComment.ipsComment_popular .ipsComment_popularFlag::after {
+    border-color: #8D5116 transparent transparent transparent;
+  }
+  /*рамка вокруг "популярного сообщения" - одноцветная */
+  .ipsComment.ipsBox.ipsComment_popular:not(.ipsModerated):not(.ipsComment_selected){
+    border-color: #8D5116;
+  }
 
-/*счётчики сообщений*/
+  /*счётчики сообщений*/
   .ipsCommentCount,.ipsFollow .ipsCommentCount {
     background: none repeat scroll 0% 0% #6C6C6C;
     color: #eee;
@@ -952,10 +953,10 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   /*"стрелочка" влево от счётчика*/
   html[dir="ltr"] .ipsCommentCount:after,html[dir="ltr"] .ipsFollow .ipsCommentCount:after {
     border-color: transparent #6C6C6C transparent transparent;;
-}
+  }
 
   /*фон лимита диалогов в почте*/
-.ipsAttachment_progress{
+  .ipsAttachment_progress{
     background: none repeat scroll 0% 0% #CCC;
     border: 0px;
   }
@@ -973,27 +974,27 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     background-color:#444;
   }
   .leave-conversation a:hover{
-  border-color: #777;
-  background-color: #222;
-}
-	/*ЛС. разделитель между списком участников*/
-	html[dir="ltr"] .cMessage_members > ol > li {
-		border-right: 2px solid #323232;
-	}
+    border-color: #777;
+    background-color: #222;
+  }
+  /*ЛС. разделитель между списком участников*/
+  html[dir="ltr"] .cMessage_members > ol > li {
+    border-right: 2px solid #323232;
+  }
 
   /*ЛС рамка сообщения*/
   .ipsComment:not( .ipsModerated ) .ipsComment_header{
     border-top: none;
   }
-  
-	/*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
-	.ipsApp .ipsButton_link.ipsFollow, .ipsApp .ipsButton_link.ipsPromote, .ipsApp .ipsButton_light, 
-	/*кнопка профиль*/
-	.ipsApp .ipsButton_veryLight{
-		background: none repeat scroll 0% 0% #444;
-		border-color: #474747;
-		color: #CCC;
-	}
+
+  /*кнопка мультицитата, настрйки ЛС, активность, подписаться*/
+  .ipsApp .ipsButton_link.ipsFollow, .ipsApp .ipsButton_link.ipsPromote, .ipsApp .ipsButton_light,
+  /*кнопка профиль*/
+  .ipsApp .ipsButton_veryLight{
+    background: none repeat scroll 0% 0% #444;
+    border-color: #474747;
+    color: #CCC;
+  }
 
   /*кнопка сортировка, фильтр, детали*/
   .ipsButtonBar .ipsButtonRow li > a,
@@ -1002,19 +1003,19 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   .ipsButtonRow li > a,
   .ipsButtonRow li > button,
   .ipsButtonRow li > span{
-    background: none repeat scroll 0% 0% #444;  
-    color: #DDD;  
+    background: none repeat scroll 0% 0% #444;
+    color: #DDD;
   }
-	
-	/*окно предупреждения*/
-.ipsAlert {
+
+  /*окно предупреждения*/
+  .ipsAlert {
     background: none repeat scroll 0% 0% #480000;
-}
-.ipsAlert_msg, .ipsAlert_icon {
+  }
+  .ipsAlert_msg, .ipsAlert_icon {
     color: #ddd !important;
-}
-	/*окно написания сообщения*/
-  
+  }
+  /*окно написания сообщения*/
+
   /*кнопки шрифт/размер*/
   .cke_combo_text{
     color: #CCC;
@@ -1027,8 +1028,8 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     border-radius: 3px;
     box-shadow: none;
     background: linear-gradient(to bottom, #666, #4c4c4c) repeat scroll 0% 0% #4c4c4c;
-}
-   
+  }
+
   .cke_combo_off a.cke_combo_button:hover,
   .cke_combo_off a.cke_combo_button:focus,
   .cke_combo_off a.cke_combo_button:active,
@@ -1038,7 +1039,7 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   .cke_combo_on a.cke_combo_button:active{
     background: linear-gradient(to bottom, #262626, #1a1a1a) repeat scroll 0% 0% #1a1a1a;
   }
-/*заголовок выпадающего списка шрифт/размер*/
+  /*заголовок выпадающего списка шрифт/размер*/
   .cke_panel_grouptitle {
     font-weight: bold;
     color: #ccc;
@@ -1046,19 +1047,19 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     box-shadow: 0px 1px 0px #B6B6B6 inset;
     background: linear-gradient(to top,#444,#595959) repeat scroll 0% 0% #595959;
     text-align: left;
-}
-  
-	.ipsComposeArea_dummy {
+  }
+
+  .ipsComposeArea_dummy {
     background: none repeat scroll 0% 0% #2D2D2D;
     color: #AAA;
-	}
-.cke_wysiwyg_frame,
-.cke_wysiwyg_div{
-	color: #AAA;
-}
-	.cke_wysiwyg_frame, .cke_wysiwyg_div {
+  }
+  .cke_wysiwyg_frame,
+  .cke_wysiwyg_div{
+    color: #AAA;
+  }
+  .cke_wysiwyg_frame, .cke_wysiwyg_div {
     background-color: rgba(255, 255, 255, 0);
-}
+  }
   .cke_top {
     background-color: #222;
     border-bottom: 1px solid #444;
@@ -1067,35 +1068,35 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     background-color:rgba(0, 0, 0, 0.2);
   }
 
-/*инвертированный цвет иконок*/
-	.cke_button_icon,
-	.cke_ltr .cke_button__indent_icon,
-	.cke_ltr .cke_button__outdent_icon,
-	.cke_ltr .cke_button__ipspreview_icon,
-	.cke_ltr .cke_button__numberedlist_icon,
-	.cke_ltr .cke_button__bulletedlist_icon{
-		background-image: url("https://forum.crossout.ru/uploads/monthly_2016_11/icons.png.8075e6ec32828df44ef720e4c48a6b78.png") !important;
-		filter: brightness(0.9) !important;
-	}
+  /*инвертированный цвет иконок*/
+  .cke_button_icon,
+  .cke_ltr .cke_button__indent_icon,
+  .cke_ltr .cke_button__outdent_icon,
+  .cke_ltr .cke_button__ipspreview_icon,
+  .cke_ltr .cke_button__numberedlist_icon,
+  .cke_ltr .cke_button__bulletedlist_icon{
+    background-image: url("https://forum.crossout.ru/uploads/monthly_2016_11/icons.png.8075e6ec32828df44ef720e4c48a6b78.png") !important;
+    filter: brightness(0.9) !important;
+  }
   /*разделитель между группами иконок*/
   .cke_toolbar_separator {
     background-color: #444;
   }
   /*выделение активной кнопки форматирования*/
   a.cke_button_on {
-      background: none repeat scroll 0% 0% #444;
+    background: none repeat scroll 0% 0% #444;
   }
   /*подсветка кнопки форматирования при наведении*/
   a.cke_button_off:hover{
-      background: none repeat scroll 0% 0% #666;
+    background: none repeat scroll 0% 0% #666;
   }
-	a.cke_button_disabled:hover,
-	a.cke_button_disabled:focus,
-	a.cke_button_disabled:active {
-		background: none repeat scroll 0% 0% #363636;
-	}
+  a.cke_button_disabled:hover,
+  a.cke_button_disabled:focus,
+  a.cke_button_disabled:active {
+    background: none repeat scroll 0% 0% #363636;
+  }
 
-/*фон выпадающего списка шрифт/размер*/
+  /*фон выпадающего списка шрифт/размер*/
   .cke_panel_list {
     background-color: #2D2D2D !important;
   }
@@ -1110,9 +1111,9 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   }
   /*эффект наведения на пункт списка*/
   .cke_panel_listItem a:hover,.cke_panel_listItem a:focus,.cke_panel_listItem a:active{
-	border-color:#dedede;
-	background-color:#666;
-	box-shadow:0 0 2px rgba(0,0,0,.1) inset
+    border-color:#dedede;
+    background-color:#666;
+    box-shadow:0 0 2px rgba(0,0,0,.1) inset
   }
   /*эффект выделения выбраного пункта*/
   .cke_panel_listItem.cke_selected a {
@@ -1127,7 +1128,7 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   .cke_menubutton:focus,
   .cke_menubutton:active {
     background-color: #555;
-}
+  }
   /*панель выбора цвета/фона текста/контектсное меню редактора*/
   .cke_panel{
     background-color: #222;
@@ -1143,95 +1144,95 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
   }
   /*наведение на...*/
   /*..."автоматически"*/
-  a.cke_colorauto:hover, 
-  a.cke_colormore:hover, 
-  a.cke_colorauto:focus, 
-  a.cke_colormore:focus, 
-  a.cke_colorauto:active, 
+  a.cke_colorauto:hover,
+  a.cke_colormore:hover,
+  a.cke_colorauto:focus,
+  a.cke_colormore:focus,
+  a.cke_colorauto:active,
   a.cke_colormore:active,
   /*...цвета*/
-  a.cke_colorbox:hover, 
-  a.cke_colorbox:focus, 
+  a.cke_colorbox:hover,
+  a.cke_colorbox:focus,
   a.cke_colorbox:active {
     background-color: #444;
-}
+  }
 
   /*изменено выделение рамкой области ввода текста у цитат и спойлеров*/
   /*при наведении на них в редкторе сообщения*/
-	.ipsApp .cke_widget_wrapper:hover > .cke_widget_element,
+  .ipsApp .cke_widget_wrapper:hover > .cke_widget_element,
   .ipsApp .cke_widget_wrapper:hover .cke_widget_editable{
     outline: 1px solid #3B3B3B !important;
-  }	
+  }
   /*убрано жирное выделение рамкой при перемщении*/
   .cke_widget_wrapper.cke_widget_focused > .cke_widget_element,
   .cke_widget_wrapper .cke_widget_editable.cke_widget_editable_focused {
     outline: 0px;
-}
+  }
   /*тень от выделения*/
-.ipsApp .cke_widget_wrapper:hover .cke_widget_editable.cke_widget_editable_focused {
+  .ipsApp .cke_widget_wrapper:hover .cke_widget_editable.cke_widget_editable_focused {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075), 0px 1px 9px #666;
-}
+  }
 
-/*уведомление о том, что сообщения в теме модерируются*/
-.ipsMessage_warning {
-	background: none repeat scroll 0% 0% #1B1B1B;
-	color: #C75050;
-}	
-	
-.ipsFieldRow_required {
-	color: #ff6262;
-}
+  /*уведомление о том, что сообщения в теме модерируются*/
+  .ipsMessage_warning {
+    background: none repeat scroll 0% 0% #1B1B1B;
+    color: #C75050;
+  }
 
-.ipsFieldRow_section {
-	background: #000;
-	color: #999;
-}
+  .ipsFieldRow_required {
+    color: #ff6262;
+  }
 
-	.ipsComposeArea_editor,
-	.ipsComposeArea_unavailable .ipsComposeArea_editor{
-		background: #444;
-	}
+  .ipsFieldRow_section {
+    background: #000;
+    color: #999;
+  }
 
-	html[dir="ltr"] .ipsComposeArea_withPhoto .ipsComposeArea_editor:before,
-	html[dir="ltr"] .ipsComposeArea_unavailable.ipsComposeArea_withPhoto .ipsComposeArea_editor:before{
-		border-color: transparent #444 transparent transparent;
-	}
-	html[dir="rtl"] .ipsComposeArea_withPhoto .ipsComposeArea_editor:before {
-		border-color: transparent transparent transparent #444;
-	}
-/*рамка вокруг прикреплённой картинки*/
-.ipsAttach{
-  padding: 3px 3px 0px 3px;  
-}
+  .ipsComposeArea_editor,
+  .ipsComposeArea_unavailable .ipsComposeArea_editor{
+    background: #444;
+  }
+
+  html[dir="ltr"] .ipsComposeArea_withPhoto .ipsComposeArea_editor:before,
+  html[dir="ltr"] .ipsComposeArea_unavailable.ipsComposeArea_withPhoto .ipsComposeArea_editor:before{
+    border-color: transparent #444 transparent transparent;
+  }
+  html[dir="rtl"] .ipsComposeArea_withPhoto .ipsComposeArea_editor:before {
+    border-color: transparent transparent transparent #444;
+  }
+  /*рамка вокруг прикреплённой картинки*/
+  .ipsAttach{
+    padding: 3px 3px 0px 3px;
+  }
   /*прикреплённая картинка*/
   .ipsImageAttach_thumb {
     background-color: transparent;
     margin: 2px 0px 0px 5px
   }
 
-.ipsAttachment_dropZone.ipsDragging,
-.ipsComposeArea_dropZone.ipsDragging {
-	background: #2c5165;
+  .ipsAttachment_dropZone.ipsDragging,
+  .ipsComposeArea_dropZone.ipsDragging {
+    background: #2c5165;
     border-color: #6fa9ca;
-}
+  }
 
-.ipsLoading:before,
-.ipsLoading.ipsLoading_small:before,
-.ipsLoading.ipsLoading_tiny:before {
-	color: #e0e0e0;
-}
+  .ipsLoading:before,
+  .ipsLoading.ipsLoading_small:before,
+  .ipsLoading.ipsLoading_tiny:before {
+    color: #e0e0e0;
+  }
 
-/* Dialogs */
-.ipsModal {
-	background: rgba(0,0,0,0.8);
-}
+  /* Dialogs */
+  .ipsModal {
+    background: rgba(0,0,0,0.8);
+  }
 
-	/*все диалоговые окна ограничены по ширине*/
-	.ipsDialog > div,
-	.ipsDialog .ipsDialog_loading {
-		max-width: 600px;
-		background: #222;
-	}
+  /*все диалоговые окна ограничены по ширине*/
+  .ipsDialog > div,
+  .ipsDialog .ipsDialog_loading {
+    max-width: 600px;
+    background: #222;
+  }
 
   .ipsHovercard {
     background-color: #1b1b1b;
@@ -1260,166 +1261,166 @@ a.ipsSideMenu_item:not( .ipsSideMenu_itemActive ):hover {
     border-color:#222 transparent transparent transparent;
   }
 
-.ipsMenu {
-	background: #222;
-	border-color: #000;
-}
+  .ipsMenu {
+    background: #222;
+    border-color: #000;
+  }
 
-	.ipsMenu.ipsMenu_bottomRight:before,
-	.ipsMenu.ipsMenu_bottomLeft:before,
-	.ipsMenu.ipsMenu_bottomCenter:before {
-		border-color: transparent transparent #000 transparent;
-	}
-	.ipsMenu.ipsMenu_bottomRight:after,
-	.ipsMenu.ipsMenu_bottomLeft:after,
-	.ipsMenu.ipsMenu_bottomCenter:after {
-		border-color: transparent transparent #222 transparent
-	}
-	/*--*/
-	.ipsMenu.ipsMenu_topRight:before,
-	.ipsMenu.ipsMenu_topLeft:before,
-	.ipsMenu.ipsMenu_topCenter:before {
-		border-color: #000 transparent transparent transparent;
-	}
-	.ipsMenu.ipsMenu_topRight:after,
-	.ipsMenu.ipsMenu_topLeft:after,
-	.ipsMenu.ipsMenu_topCenter:after {
-		border-color: #222 transparent transparent transparent;
-	}
-	/*--*/
+  .ipsMenu.ipsMenu_bottomRight:before,
+  .ipsMenu.ipsMenu_bottomLeft:before,
+  .ipsMenu.ipsMenu_bottomCenter:before {
+    border-color: transparent transparent #000 transparent;
+  }
+  .ipsMenu.ipsMenu_bottomRight:after,
+  .ipsMenu.ipsMenu_bottomLeft:after,
+  .ipsMenu.ipsMenu_bottomCenter:after {
+    border-color: transparent transparent #222 transparent
+  }
+  /*--*/
+  .ipsMenu.ipsMenu_topRight:before,
+  .ipsMenu.ipsMenu_topLeft:before,
+  .ipsMenu.ipsMenu_topCenter:before {
+    border-color: #000 transparent transparent transparent;
+  }
+  .ipsMenu.ipsMenu_topRight:after,
+  .ipsMenu.ipsMenu_topLeft:after,
+  .ipsMenu.ipsMenu_topCenter:after {
+    border-color: #222 transparent transparent transparent;
+  }
+  /*--*/
 
-	.ipsMenu_item:not( .ipsMenu_itemClicked ):not( .ipsMenu_itemDisabled ) a:hover,
-	.ipsMenu_item[data-selected] a, .ipsMenu_item[data-selected] span {
-		background: #000 !important;
-	}
+  .ipsMenu_item:not( .ipsMenu_itemClicked ):not( .ipsMenu_itemDisabled ) a:hover,
+  .ipsMenu_item[data-selected] a, .ipsMenu_item[data-selected] span {
+    background: #000 !important;
+  }
 
-	.ipsMenu_sep {
-		border-color: rgba(255,255,255,0.1);
-	}
+  .ipsMenu_sep {
+    border-color: rgba(255,255,255,0.1);
+  }
 
-	.ipsMenu_title {
-		background: #444;
-		color: #e0e0e0;
-	}
+  .ipsMenu_title {
+    background: #444;
+    color: #e0e0e0;
+  }
 
-	.ipsMenu_item > a, .ipsMenu_item > span {
-		color: #fff;
-	}
+  .ipsMenu_item > a, .ipsMenu_item > span {
+    color: #fff;
+  }
 
-	.ipsMenu .ipsType_sectionHead {
-		color: #fff;
-	}
+  .ipsMenu .ipsType_sectionHead {
+    color: #fff;
+  }
 
-	.ipsMenu input {
-		color: #fff;
-	}
+  .ipsMenu input {
+    color: #fff;
+  }
 
-	.ipsMenu_headerBar,
-	.ipsMenu_footerBar {
-		background: #222;
-	}
+  .ipsMenu_headerBar,
+  .ipsMenu_footerBar {
+    background: #222;
+  }
 
-	.ipsMenu_headerBar,
-	.ipsMenu_footerBar {
-		border-color: rgba(255,255,255,0.1);
-	}
+  .ipsMenu_headerBar,
+  .ipsMenu_footerBar {
+    border-color: rgba(255,255,255,0.1);
+  }
 
-	.ipsMenu_itemDisabled > a,
-	.ipsMenu_itemDisabled > span {
-		color: #969696;
-	}
-	
-	/*предупреждение доп.сообщение модератора (красное со значком "!")*/
-	.post-note.pn-type-1{
-		background-color: rgba(255, 97, 97, 0.6)
-	}
-	/*инфа доп. сообщение модератора (зелёное со значком "i")*/
-	.post-note.pn-type-2{
-		background-color: rgba(109, 197, 109, 0.6);
-	}	
-	/*заметка доп. сообщение модератора (жёлтое с значком "стикер")*/
+  .ipsMenu_itemDisabled > a,
+  .ipsMenu_itemDisabled > span {
+    color: #969696;
+  }
+
+  /*предупреждение доп.сообщение модератора (красное со значком "!")*/
+  .post-note.pn-type-1{
+    background-color: rgba(255, 97, 97, 0.6)
+  }
+  /*инфа доп. сообщение модератора (зелёное со значком "i")*/
+  .post-note.pn-type-2{
+    background-color: rgba(109, 197, 109, 0.6);
+  }
+  /*заметка доп. сообщение модератора (жёлтое с значком "стикер")*/
   .post-note.pn-type-3 {
     background-color: rgba(200, 183, 0, 0.6);
   }
 
-	/*дилоговое окно создания новой темы*/
-	/*заголовок окна*/
-	.ipsDialog_title {
-		color: #DDD;
-	}
-	/*стрелочка вниз. на кнопке для раскрытия списка*/
-	.ipsSelectTree_expand,
-	/*текст на кнопке*/
-	.ipsSelectTree_placeholder{
-		color: #CCC;
-	}
-	/*убрана рамка вокруг выпадающего списка*/
-	.ipsSelectTree_nodes {
-		padding: 0px;
-		border-color: #555;
-	}
-	/*кнопка выпадающего списка*/
-	.ipsSelectTree {
-		border: 1px solid #555;
-		background: linear-gradient(to bottom, #393939 0%, #232323 100%) repeat scroll 0% 0% transparent;
-	}
-	/*кнопка выпадающего списка*/
-	.ipsSelectTree:hover {
-		background: linear-gradient(to bottom, #333 0%, #222 100%) repeat scroll 0% 0% transparent;
-	}
-	/*фон выпадающего списка*/
-	.ipsSelectTree_nodes [data-role="nodeList"] {
-		background: none repeat scroll 0% 0% #232323;
-	}
-	/*убраны полоски между строками*/
-	.ipsSelectTree_nodes [data-role="nodeList"] li {
-		border-bottom: 0px;
-	}
-	/*уменьшены интервалы между обычными строками*/
-	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item {
-		padding: 3px 25px 3px 22px;
-	}
-	/*уменьшены интервалы между категориями*/
-	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item.ipsSelectTree_withChildren {
-		padding: 4px 7px;
-	}
-	/*фон выделенной строки */
-	.ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item:not( .ipsSelectTree_itemDisabled ):hover {
-		background: none repeat scroll 0% 0% #383838 !important;
-	}
-	/*Орнжевый цвет текста у недоступных строк и у раскрываемых категорий*/
-	.ipsSelectTree_itemDisabled > [data-role="nodeTitle"] {
-		color: #D29B48;
-	}
-	/*слева полоска уровня списка */
-	html[dir="ltr"] .ipsSelectTree_nodes [data-role="nodeList"] li [data-role="childWrapper"] {
-		border-left: 1px dotted #505050;
-	}
+  /*дилоговое окно создания новой темы*/
+  /*заголовок окна*/
+  .ipsDialog_title {
+    color: #DDD;
+  }
+  /*стрелочка вниз. на кнопке для раскрытия списка*/
+  .ipsSelectTree_expand,
+  /*текст на кнопке*/
+  .ipsSelectTree_placeholder{
+    color: #CCC;
+  }
+  /*убрана рамка вокруг выпадающего списка*/
+  .ipsSelectTree_nodes {
+    padding: 0px;
+    border-color: #555;
+  }
+  /*кнопка выпадающего списка*/
+  .ipsSelectTree {
+    border: 1px solid #555;
+    background: linear-gradient(to bottom, #393939 0%, #232323 100%) repeat scroll 0% 0% transparent;
+  }
+  /*кнопка выпадающего списка*/
+  .ipsSelectTree:hover {
+    background: linear-gradient(to bottom, #333 0%, #222 100%) repeat scroll 0% 0% transparent;
+  }
+  /*фон выпадающего списка*/
+  .ipsSelectTree_nodes [data-role="nodeList"] {
+    background: none repeat scroll 0% 0% #232323;
+  }
+  /*убраны полоски между строками*/
+  .ipsSelectTree_nodes [data-role="nodeList"] li {
+    border-bottom: 0px;
+  }
+  /*уменьшены интервалы между обычными строками*/
+  .ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item {
+    padding: 3px 25px 3px 22px;
+  }
+  /*уменьшены интервалы между категориями*/
+  .ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item.ipsSelectTree_withChildren {
+    padding: 4px 7px;
+  }
+  /*фон выделенной строки */
+  .ipsSelectTree_nodes [data-role="nodeList"] li .ipsSelectTree_item:not( .ipsSelectTree_itemDisabled ):hover {
+    background: none repeat scroll 0% 0% #383838 !important;
+  }
+  /*Орнжевый цвет текста у недоступных строк и у раскрываемых категорий*/
+  .ipsSelectTree_itemDisabled > [data-role="nodeTitle"] {
+    color: #D29B48;
+  }
+  /*слева полоска уровня списка */
+  html[dir="ltr"] .ipsSelectTree_nodes [data-role="nodeList"] li [data-role="childWrapper"] {
+    border-left: 1px dotted #505050;
+  }
 
-/* Profile */
-/* Box shadow doesn't look good here, so remove it */
-#elProfileHeader {
-	box-shadow: 0 0 0;
-}
+  /* Profile */
+  /* Box shadow doesn't look good here, so remove it */
+  #elProfileHeader {
+    box-shadow: 0 0 0;
+  }
 
-#elProfileStats {
-	background: #333;
-}
+  #elProfileStats {
+    background: #333;
+  }
 
-html[dir] #elProfileStats > ul:last-child > li {
-	border-color: rgba(255,255,255,0.1);
-}
+  html[dir] #elProfileStats > ul:last-child > li {
+    border-color: rgba(255,255,255,0.1);
+  }
 
-/* Streams */
-/* Remove the background; not needed on dark theme */
-body[data-pageapp="core"][data-pagemodule="discover"][data-pagecontroller="streams"] [data-controller="core.front.streams.activity"] > .ipsAreaBackground_light {
-	background: transparent;
-	padding: 0;
-}
-	/*списке активности. рамка вокруг сообщений*/
-	.ipsStreamItem.ipsStreamItem_contentBlock {
-		border: 1px solid #363636;
-	}
+  /* Streams */
+  /* Remove the background; not needed on dark theme */
+  body[data-pageapp="core"][data-pagemodule="discover"][data-pagecontroller="streams"] [data-controller="core.front.streams.activity"] > .ipsAreaBackground_light {
+    background: transparent;
+    padding: 0;
+  }
+  /*списке активности. рамка вокруг сообщений*/
+  .ipsStreamItem.ipsStreamItem_contentBlock {
+    border: 1px solid #363636;
+  }
 
   /*"стрелочка" влево от события в активности*/
   html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem:after {
@@ -1428,37 +1429,38 @@ body[data-pageapp="core"][data-pagemodule="discover"][data-pagecontroller="strea
   /*контур "стрелочки"*/
   html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:before {
     border-color: transparent #363636 transparent transparent;
-  }	 
+  }
 
-.ipsStream .ipsStreamItem_contentType {
-	background: #d1d1d1;
-	color: #000;
-}
+  /*активность. кружки с иконкой слева от сообщения*/
+  .ipsStream .ipsStreamItem_contentType {
+    background: #111111;
+    color: #4d4d4d;
+  }
 
-/*кнопка настроек тем в типе публикаций в активности*/
-.cStreamForm_list li a.ipsSideMenu_item.ipsSideMenu_itemActive + .cStreamForm_menu, .cStreamForm_list li a.ipsSideMenu_item:hover:not(.ipsSideMenu_itemActive) + .cStreamForm_menu{
+  /*кнопка настроек тем в типе публикаций в активности*/
+  .cStreamForm_list li a.ipsSideMenu_item.ipsSideMenu_itemActive + .cStreamForm_menu, .cStreamForm_list li a.ipsSideMenu_item:hover:not(.ipsSideMenu_itemActive) + .cStreamForm_menu{
     background: #222 !important;
-}
+  }
 
   /*активность за "последний час/сегодня/"*/
-.ipsStreamItem_time {
-	color: #eee;
-}
+  .ipsStreamItem_time {
+    color: #eee;
+  }
 
-html[dir] .ipsStreamItem.ipsStreamItem_condensed .ipsStreamItem_stats {
-	border-color: rgba(255,255,255,0.2);
-}
+  html[dir] .ipsStreamItem.ipsStreamItem_condensed .ipsStreamItem_stats {
+    border-color: rgba(255,255,255,0.2);
+  }
 
-/* Post content */
-.ipsQuote_citation,
-.ipsSpoiler_header {
-	background: none repeat scroll 0% 0% #111;
-	color: #e0e0e0;
-}
+  /* Post content */
+  .ipsQuote_citation,
+  .ipsSpoiler_header {
+    background: none repeat scroll 0% 0% #111;
+    color: #e0e0e0;
+  }
 
-.ipsQuote .ipsQuote_citation a {
-	color: #eee;
-}
+  .ipsQuote .ipsQuote_citation a {
+    color: #eee;
+  }
 
   .ipsQuote,
   .ipsSpoiler,
@@ -1469,43 +1471,43 @@ html[dir] .ipsStreamItem.ipsStreamItem_condensed .ipsStreamItem_stats {
   }
 
 
-iframe[data-embedContent],
-.ipsEmbedded_content {
-	background-color: #222;
-}
+  iframe[data-embedContent],
+  .ipsEmbedded_content {
+    background-color: #222;
+  }
 
-.ipsEmbedded_headerArea {
-	background: #111;
-}
+  .ipsEmbedded_headerArea {
+    background: #111;
+  }
 
-.ipsEmoticons_item[data-emoticon]:hover {
-	background: #111;
-}
+  .ipsEmoticons_item[data-emoticon]:hover {
+    background: #111;
+  }
   /*ограничение ширины смайликов с списке*/
   .ipsEmoticons_item {
     max-width: 60px;
-}
+  }
 
-/*блок кода в сообщении*/
+  /*блок кода в сообщении*/
   .pln {
     color: #CCC;
-  }  
+  }
   .ipsCode {
     background: none repeat scroll 0% 0% #222;
     border-left: 4px solid #000 !important;
   }
-/*редактор кода*/
+  /*редактор кода*/
   .CodeMirror {
     background: none repeat scroll 0% 0% #363636;
     color: #AAA;
   }
 
-/* Pagination */
+  /* Pagination */
   .ipsPagination.ipsPagination_mini a{
     text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7) !important;/*тень под номером страницы!?*/
   }
 
-/*нумерация страниц*/
+  /*нумерация страниц*/
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_page a,
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_next a,
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_prev a,
@@ -1522,7 +1524,7 @@ iframe[data-embedContent],
   .ipsButtonBar .ipsPagination .ipsPagination_pageJump a{
     color: #CCC;
   }
-  
+
   /*эффект от наведения*/
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_page a:hover,
   .ipsPagination:not(.ipsPagination_mini) .ipsPagination_next a:hover,
@@ -1532,39 +1534,43 @@ iframe[data-embedContent],
     background: none repeat scroll 0% 0% #888 !important;
   }
 
-.ipsPager_type,
-.ipsPager .ipsPager_next a:after,
-.ipsPager .ipsPager_prev a:after {
-	color: #e0e0e0;
-}
+  .ipsPager_type,
+  .ipsPager .ipsPager_next a:after,
+  .ipsPager .ipsPager_prev a:after {
+    color: #e0e0e0;
+  }
 
-.ipsPagination.ipsPagination_mini a {
-	background: rgba(255,255,255,0.2);
-	color: #fff;
-}
+  .ipsPagination.ipsPagination_mini a {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
 
-/* Comments */
-.ipsComment {
-	background: #333;
-}
+  /* Comments */
+  .ipsComment {
+    background: #333;
+  }
 
-.ipsComment:not( .ipsModerated ) .ipsComment_header {
-	background: #292929 !important;
-}
+  .ipsComment:not( .ipsModerated ) .ipsComment_header {
+    background: #292929 !important;
+  }
 
-/* Miscellaneous */
-.ipsPageHead_special {
-	background: #222;
-}
-	.cUserHovercard .ipsPageHead_special {
-		background: #111;
-	}
+  /* Miscellaneous */
+  .ipsPageHead_special {
+    background: #222;
+  }
+  .cUserHovercard .ipsPageHead_special {
+    background: #111;
+  }
+  /*страница игрока. фон под ником и ролью/званием*/
+  .ipsPageHead_barText, .ipsPageHead_barText_small{
+    background: none;
+  }
 
-hr.ipsHr {
-	border-color: rgba(255,255,255,0.1);;
-}
+  hr.ipsHr {
+    border-color: rgba(255,255,255,0.1);;
+  }
 
-/*маленькая всплывающая подсказка*/
+  /*маленькая всплывающая подсказка*/
   .ipsTooltip {
     background: #000;
   }
@@ -1573,81 +1579,77 @@ hr.ipsHr {
     border-color: #000 transparent transparent;
   }
 
-.ipsTabs_panels.ipsTabs_contained {
-	border-color: #444;
-}
+  .ipsTabs_panels.ipsTabs_contained {
+    border-color: #444;
+  }
 
-.ipsTabs.ipsTabs_contained {
-	border-color: #444 #444 transparent #444;
-}
+  .ipsTabs.ipsTabs_contained {
+    border-color: #444 #444 transparent #444;
+  }
 
-	/*строка быстрого поиска*/
-#elSearch {
-	background: #000;
-	}
-	#elSearch input[type="search"]{
-		color: #DDD;
-	}
-	#elSearch #elSearchFilter {
+  /*строка быстрого поиска*/
+  #elSearch {
+    background: #333;
+  }
+  #elSearch input[type="search"]{
+    color: #DDD;
+  }
+  #elSearch #elSearchFilter {
     color: rgb(192, 192, 192);
     background: none repeat scroll 0% 0% rgb(38, 38, 38) !important;
-}
+  }
 
-.ipsPip {
-	color: #e0e0e0;
-}
+  .ipsPip {
+    color: #e0e0e0;
+  }
 
-.ipsEmpty {
-	color: rgba(255,255,255,0.18);
-}
+  .ipsEmpty {
+    color: rgba(255,255,255,0.18);
+  }
 
-.ipsAlert_msg,
-.ipsAlert_icon {
-	color: #555;
-}
+  .ipsAlert_msg,
+  .ipsAlert_icon {
+    color: #555;
+  }
 
-	.ipsProgressBar_progress {
-  font-size: 22px;
-	background: #259C34;
-	color: #1b1b1b;
-	text-shadow: 0 0 0;
-}
+  .ipsProgressBar_progress {
+    font-size: 22px;
+    background: #259C34;
+    color: #1b1b1b;
+    text-shadow: 0 0 0;
+  }
 
-.ipsProgressBar.ipsProgressBar_animated .ipsProgressBar_progress {
-	background-color: #aaa;
-}
+  .ipsProgressBar.ipsProgressBar_animated .ipsProgressBar_progress {
+    background-color: #aaa;
+  }
 
-.ipsProgressBar_progress[data-progress]:after {
-	color: #1b1b1b;
-}
+  .ipsProgressBar_progress[data-progress]:after {
+    color: #1b1b1b;
+  }
 
-	.ipsThumb, .ipsImage_thumbnailed {
-		border: 1px solid #4a4a4a;
-	}
-
-.ipsUserPhoto {
-	background: #000;
-}
+  .ipsThumb, .ipsImage_thumbnailed {
+    border: 1px solid #4a4a4a;
+  }
 
   /*строки-заголовки в таблице настроек уведомлений*/
-.ipsApp_front .ipsTable.ipsMatrix .ipsMatrix_subHeader {
-	background: #2d2d2d;
-	color: #eee;
-}
+  .ipsApp_front .ipsTable.ipsMatrix .ipsMatrix_subHeader {
+    background: #2d2d2d;
+    color: #eee;
+  }
 
   /*фон шапки настроек уведомлений*/
-.ipsTable.ipsMatrix thead th {
+  .ipsTable.ipsMatrix thead th {
     background: linear-gradient(to bottom, rgb(158, 92, 45) 0%, #3C1500 100%) repeat scroll 0% 0% transparent;
-}
+  }
 
   /*подсвеченная строка в настройках уведомлений, после перехода по ссылке*/
   .ipsTable.ipsMatrix .ipsMatrix_highlighted {
     background: none repeat scroll 0% 0% rgba(102, 51, 0, 0.5);
-}
+  }
   /*выделенная строка в управлении подписками*/
   .ipsApp .ipsDataItem_selected {
     background-color: #353535;
-}
+  }
 
   /*шапка сообщения в "мобильной" версии*/
   .cPost.ipsComment:not(.ipsComment_selected):not(.ipsModerated) .cAuthorPane {
@@ -1659,85 +1661,85 @@ hr.ipsHr {
     background: #000;
   }
 
-	/*окно-ссылка на тему*/
-	body[data-role="internalEmbed"]{
-		background-color: #242424;
-	}
-	iframe.ipsEmbed_finishedLoading[data-embedContent]{
-		background-color: transparent;
-	}
-	.ipsRichEmbed_itemTitle{
-		color: #CCC;
-	}
-	.ipsRichEmbed_openItem{
-		color: #fff;
-		opacity: 0.5;
-	}
-  
+  /*окно-ссылка на тему*/
+  body[data-role="internalEmbed"]{
+    background-color: #242424;
+  }
+  iframe.ipsEmbed_finishedLoading[data-embedContent]{
+    background-color: transparent;
+  }
+  .ipsRichEmbed_itemTitle{
+    color: #CCC;
+  }
+  .ipsRichEmbed_openItem{
+    color: #fff;
+    opacity: 0.5;
+  }
 
-.ipsWidget {
-	background: #333;
-}
-	.ipsWidget.ipsWidget_horizontal .ipsWidget_title {
-		color: #fff !important;
-		background: rgba(255,255,255,0.1);
-	}
 
-	.ipsWidget .ipsTabs_small .ipsTabs_activeItem {
-		border-bottom: 0;
-	}
-	.ipsPad_half.ipsWidget_inner {
+  .ipsWidget {
+    background: #333;
+  }
+  .ipsWidget.ipsWidget_horizontal .ipsWidget_title {
+    color: #fff !important;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .ipsWidget .ipsTabs_small .ipsTabs_activeItem {
+    border-bottom: 0;
+  }
+  .ipsPad_half.ipsWidget_inner {
     border-bottom: none !important;
-}
+  }
 
-	.ipsWidget .ipsTabs_small .ipsTabs_item:not( .ipsTabs_activeItem ) {
-		color: #999;
-	}
+  .ipsWidget .ipsTabs_small .ipsTabs_item:not( .ipsTabs_activeItem ) {
+    color: #999;
+  }
 
-	.ipsWidget_title .ipsType_light {
-		color: #d0d0d0;
-	}
-	
-.ipsLikeRep {
-	background: #222;
-}
+  .ipsWidget_title .ipsType_light {
+    color: #d0d0d0;
+  }
 
-#ipsMultiQuoter {
-	background: #000;
-}
+  .ipsLikeRep {
+    background: #222;
+  }
 
-/* Calendar */
-.cCalendar td.cCalendar_nonDate {
-	background: #000;
-}
+  #ipsMultiQuoter {
+    background: #000;
+  }
 
-.cCalendarSubmit_field .fa {
-	color: #333;
-}
+  /* Calendar */
+  .cCalendar td.cCalendar_nonDate {
+    background: #000;
+  }
 
-#elEventHeader_details {
-	background: #333;
-}
+  .cCalendarSubmit_field .fa {
+    color: #333;
+  }
+
+  #elEventHeader_details {
+    background: #333;
+  }
   /*фиксированная шапка каленадря*/
   .ipsSticky.ipsSticky_top {
     border-bottom: 1px solid rgb(153, 153, 153);
     background-color: #000;
-}
+  }
   /*месяц и год в фиксированной шапке опущен*/
   .cCalendarNav .ipsType_pageTitle {
     margin: 0px 0px 7px;
-}
+  }
   /*шапка с днями недели*/
   .ipsAreaBackground_dark {
     background: none repeat scroll 0% 0% #630;
     color: #DDD;
-}
+  }
   /*сетка календаря*/
   .cCalendar td {
     border: 1px solid #202020;
   }
 
-/*RSS (для firefox)*/
+  /*RSS (для firefox)*/
   /*шапка подписки*/
   #feedHeaderContainer {
     background-color: #444;
@@ -1757,7 +1759,7 @@ hr.ipsHr {
     background: none repeat scroll 0% 0% #2D2D2D;
   }
 
-/*Leaderboard*/
+  /*Leaderboard*/
   /*прошлые лидеры. место цифрой*/
   .cPastLeaders_cell:after{
     color:#1d1d1d;
@@ -1773,146 +1775,144 @@ hr.ipsHr {
     background-color: #2d2d2d;
   }
 
-	/*доска почёта. фикс высоты*/
-	.ipsGrid_span3.cTopMembers_member {
-		height: 296px !important;
-	}
+  /*доска почёта. фикс высоты*/
+  .ipsGrid_span3.cTopMembers_member {
+    height: 296px !important;
+  }
 
-	/*тёмная иконка кубка*/
-	.ipsLeaderboard_trophy{
-		color: #2D2D2D;
-	}
+  /*тёмная иконка кубка*/
+  .ipsLeaderboard_trophy{
+    color: #2D2D2D;
+  }
 
-	/*шапка лучшего ответа*/
-	h1.best-answer{
-		margin-top: -1px;		
-		margin-bottom: 0px;
-		background: linear-gradient(to bottom, #630 0%, #1B1B1B 100%) repeat scroll 0% 0% transparent;
-		text-align: center;
-		text-transform: uppercase;
-	}
-	/*рамка вокруг лучшего ответа*/
-	.best-answer-container {
-		border: 2px dashed #630;
-	}
-	.best-answer-container > .ipsBox{
-		margin-bottom: 0px;		
-	}
+  /*шапка лучшего ответа*/
+  h1.best-answer{
+    margin-top: -1px;
+    margin-bottom: 0px;
+    background: linear-gradient(to bottom, #630 0%, #1B1B1B 100%) repeat scroll 0% 0% transparent;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  /*рамка вокруг лучшего ответа и отступ от сообщений*/
+  .best-answer-container {
+    border: 2px dashed #630;
+    margin-bottom: 20px;
+  }
 
-/* Blog */
-#elBlogHeaderStats {
-	background: #333;
-}
+  /* Blog */
+  #elBlogHeaderStats {
+    background: #333;
+  }
 
-.cBlogInfo_content:after {
-	background: linear-gradient(to bottom, rgba(51,51,51,0) 0%,rgba(51,51,51,1) 100%);
-}
+  .cBlogInfo_content:after {
+    background: linear-gradient(to bottom, rgba(51,51,51,0) 0%,rgba(51,51,51,1) 100%);
+  }
 
-/* Gallery */
-.cGallerySteps > li.cGallerySteps_done span:after,
-.cGallerySteps > li.cGallerySteps_done + li span:before,
-.cGallerySteps > li.cGallerySteps_done a:after,
-.cGallerySteps > li.cGallerySteps_done + li a:before,
-.cGallerySteps > li.cGallerySteps_active:before,
-.cGallerySteps > li.cGallerySteps_done:before {
-	background: #AF1F52;
-}
+  /* Gallery */
+  .cGallerySteps > li.cGallerySteps_done span:after,
+  .cGallerySteps > li.cGallerySteps_done + li span:before,
+  .cGallerySteps > li.cGallerySteps_done a:after,
+  .cGallerySteps > li.cGallerySteps_done + li a:before,
+  .cGallerySteps > li.cGallerySteps_active:before,
+  .cGallerySteps > li.cGallerySteps_done:before {
+    background: #AF1F52;
+  }
 
-.cGallerySteps > li span:before,
-.cGallerySteps > li span:after,
-.cGallerySteps > li a:before,
-.cGallerySteps > li a:after,
-.cGallerySteps > li:before {
-	background: #555;
-}
+  .cGallerySteps > li span:before,
+  .cGallerySteps > li span:after,
+  .cGallerySteps > li a:before,
+  .cGallerySteps > li a:after,
+  .cGallerySteps > li:before {
+    background: #555;
+  }
 
-.cGallerySteps > li span,
-.cGallerySteps > li a {
-	color: #555;
-}
+  .cGallerySteps > li span,
+  .cGallerySteps > li a {
+    color: #555;
+  }
 
-.cGallerySteps > li.cGallerySteps_done span,
-.cGallerySteps > li.cGallerySteps_active span,
-.cGallerySteps > li.cGallerySteps_done a,
-.cGallerySteps > li.cGallerySteps_active a {
-	color: #fff;
-}
+  .cGallerySteps > li.cGallerySteps_done span,
+  .cGallerySteps > li.cGallerySteps_active span,
+  .cGallerySteps > li.cGallerySteps_done a,
+  .cGallerySteps > li.cGallerySteps_active a {
+    color: #fff;
+  }
 
-.cGallerySubmit_uploadImages .ipsAttachment_dropZone:not( .ipsDragging ) {
-	border-color: #555;
-}
+  .cGallerySubmit_uploadImages .ipsAttachment_dropZone:not( .ipsDragging ) {
+    border-color: #555;
+  }
 
-.cGallerySubmit_strip {
-	background: #1e1e1e;
-}
+  .cGallerySubmit_strip {
+    background: #1e1e1e;
+  }
 
-#elGalleryHeader {
-	margin: -15px 0 20px 0;
-}
+  #elGalleryHeader {
+    margin: -15px 0 20px 0;
+  }
 
-.cGalleryNote_note {
-	background: #000;
-}
+  .cGalleryNote_note {
+    background: #000;
+  }
 
-.cGalleryNote_editing .cGalleryNote_note textarea {
-	color: #fff;
-}
+  .cGalleryNote_editing .cGalleryNote_note textarea {
+    color: #fff;
+  }
 
-.cGalleryImageItem.cGalleryImageItem_selected {
-	background: #404a53;
-}
+  .cGalleryImageItem.cGalleryImageItem_selected {
+    background: #404a53;
+  }
 
-/* Downloads */
-#elDownloadsSubmit .ipsAttachment_dropZone {
-	background: #222;
-	border-color: #555;
-}
+  /* Downloads */
+  #elDownloadsSubmit .ipsAttachment_dropZone {
+    background: #222;
+    border-color: #555;
+  }
 
-/* Pages */
-.cCmsCategoryFeaturedEntry {
-	border-color: rgba(255,255,255,0.1);
-}
+  /* Pages */
+  .cCmsCategoryFeaturedEntry {
+    border-color: rgba(255,255,255,0.1);
+  }
 
-/* Commerce */
-.cNexusSupportMessage_m .cNexusSupportMessage_author,
-.cNexusSupportMessage_a .cNexusSupportMessage_author {
-	background: #395b76;
-}
+  /* Commerce */
+  .cNexusSupportMessage_m .cNexusSupportMessage_author,
+  .cNexusSupportMessage_a .cNexusSupportMessage_author {
+    background: #395b76;
+  }
 
-.cNexusSupportMessage_s .cNexusSupportMessage_author {
-	background: #517355;
-}
+  .cNexusSupportMessage_s .cNexusSupportMessage_author {
+    background: #517355;
+  }
 
-/* Chat */
-#elChatTabs {
-	background: #5b94c5;
-	color: #fff;
-}
+  /* Chat */
+  #elChatTabs {
+    background: #5b94c5;
+    color: #fff;
+  }
 
-#ipsTabs_elChatTabs_chatroom_panel > .ipsColumns > .ipsColumn_wide {
-	background: #292929;
-}
+  #ipsTabs_elChatTabs_chatroom_panel > .ipsColumns > .ipsColumn_wide {
+    background: #292929;
+  }
 
-.cChatUserRow:hover,
-.cChatUserRow_hover {
-	background: #111;
-}
+  .cChatUserRow:hover,
+  .cChatUserRow_hover {
+    background: #111;
+  }
 
-.cChatRow_own {
-	background: #404852;
-}
+  .cChatRow_own {
+    background: #404852;
+  }
 
-.cChatRow_own .cChatRow_user,
-.cChatRow_own .cChatRow_content,
-.cChatRow_own .cChatRow_date {
-	border-color: #343e4b;
-}
+  .cChatRow_own .cChatRow_user,
+  .cChatRow_own .cChatRow_content,
+  .cChatRow_own .cChatRow_date {
+    border-color: #343e4b;
+  }
 
-.cChatRow .cChatRow_user,
-.cChatRow .cChatRow_content,
-.cChatRow .cChatRow_date {
-	border-color: #292929;
-}
+  .cChatRow .cChatRow_user,
+  .cChatRow .cChatRow_content,
+  .cChatRow .cChatRow_date {
+    border-color: #292929;
+  }
 
-  
+
 }
